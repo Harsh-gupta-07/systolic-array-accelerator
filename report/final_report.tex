@@ -1,0 +1,144 @@
+% =============================================================================
+%  Final (Phase II) IEEE report - Systolic Array Matrix Multiplication Accelerator
+%  Course : CSA-222 Modern Computer Architecture
+%  Build  : pdflatex final_report.tex  (run twice)   -- or upload to Overleaf
+%  Figures: ../docs/figures/*.png and ../results/figures/*.png
+% =============================================================================
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+\usepackage{cite}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{xcolor}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\graphicspath{{../docs/figures/}{../results/figures/}}
+
+\begin{document}
+
+\title{Design and Evaluation of a 4$\times$4 Output-Stationary Systolic Array Accelerator for Fixed-Point Matrix Multiplication}
+
+\author{
+\IEEEauthorblockN{Harshvardhan Gupta}
+\IEEEauthorblockA{2401010185}
+\and
+\IEEEauthorblockN{Harsha Gonela}
+\IEEEauthorblockA{2401010181}
+\and
+\IEEEauthorblockN{Abhijeet Dey}
+\IEEEauthorblockA{2401010014}
+\and
+\IEEEauthorblockN{Saumya Kumar}
+\IEEEauthorblockA{2401010432}
+\and
+\IEEEauthorblockN{Shivansh Upadhyay}
+\IEEEauthorblockA{2401020109}
+\and
+\IEEEauthorblockA{\parbox{0.9\textwidth}{\centering
+\textit{B.Tech CS\&AI / CS\&DS, Semester 5 --- CSA-222 Modern Computer Architecture}\\
+\textit{Newton School of Technology}\\
+GitHub: \url{https://github.com/Harsh-gupta-07/MCA-Phase1}}}
+}
+
+\maketitle
+
+% -----------------------------------------------------------------------------
+\input{sections/abstract_intro}
+\input{sections/literature}
+\input{sections/solution}
+\input{sections/res_verification}
+\input{sections/res_model}
+\input{sections/res_comparison}
+\input{sections/res_timing}
+\input{sections/res_dataflow}
+\input{sections/res_tiling}
+\input{sections/res_numerics}
+\input{sections/limitations_conclusion}
+\input{sections/contributions}
+
+% -----------------------------------------------------------------------------
+\begin{thebibliography}{99}
+
+\bibitem{hennessy2019golden}
+J.~L. Hennessy and D.~A. Patterson, ``A new golden age for computer
+architecture,'' \emph{Commun. ACM}, vol.~62, no.~2, pp.~48--60, Feb. 2019.
+
+\bibitem{sze2017efficient}
+V.~Sze, Y.-H. Chen, T.-J. Yang, and J.~S. Emer, ``Efficient processing of deep
+neural networks: A tutorial and survey,'' \emph{Proc. IEEE}, vol.~105, no.~12,
+pp.~2295--2329, Dec. 2017.
+
+\bibitem{kung1979systolic}
+H.~T. Kung and C.~E. Leiserson, ``Systolic arrays (for VLSI),'' in
+\emph{Sparse Matrix Proceedings 1978}, SIAM, 1979, pp.~256--282.
+
+\bibitem{kung1982why}
+H.~T. Kung, ``Why systolic architectures?'' \emph{Computer}, vol.~15, no.~1,
+pp.~37--46, Jan. 1982.
+
+\bibitem{jouppi2017tpu}
+N.~P. Jouppi \emph{et al.}, ``In-datacenter performance analysis of a tensor
+processing unit,'' in \emph{Proc. 44th Annu. Int. Symp. Comput. Archit. (ISCA)},
+2017, pp.~1--12.
+
+\bibitem{jouppi2021tpuv4i}
+N.~P. Jouppi \emph{et al.}, ``Ten lessons from three generations shaped
+Google's TPUv4i,'' in \emph{Proc. 48th Annu. Int. Symp. Comput. Archit. (ISCA)},
+2021, pp.~1--14.
+
+\bibitem{genc2021gemmini}
+H.~Genc \emph{et al.}, ``Gemmini: Enabling systematic deep-learning
+architecture evaluation via full-stack integration,'' in \emph{Proc. 58th
+ACM/IEEE Design Automation Conf. (DAC)}, 2021, pp.~769--774.
+
+\bibitem{samajdar2018scalesim}
+A.~Samajdar, Y.~Zhu, P.~Whatmough, M.~Mattina, and T.~Krishna, ``SCALE-Sim:
+Systolic CNN accelerator simulator,'' \emph{arXiv:1811.02883}, 2018.
+
+\bibitem{du2015shidiannao}
+Z.~Du \emph{et al.}, ``ShiDianNao: Shifting vision processing closer to the
+sensor,'' in \emph{Proc. 42nd Annu. Int. Symp. Comput. Archit. (ISCA)}, 2015,
+pp.~92--104.
+
+\bibitem{chen2017eyeriss}
+Y.-H. Chen, T.~Krishna, J.~S. Emer, and V.~Sze, ``Eyeriss: An energy-efficient
+reconfigurable accelerator for deep convolutional neural networks,''
+\emph{IEEE J. Solid-State Circuits}, vol.~52, no.~1, pp.~127--138, Jan. 2017.
+
+\bibitem{jacob2018quantization}
+B.~Jacob \emph{et al.}, ``Quantization and training of neural networks for
+efficient integer-arithmetic-only inference,'' in \emph{Proc. IEEE/CVF Conf.
+Comput. Vis. Pattern Recognit. (CVPR)}, 2018, pp.~2704--2713.
+
+\bibitem{patterson_cod}
+D.~A. Patterson and J.~L. Hennessy, \emph{Computer Organization and Design:
+The Hardware/Software Interface, RISC-V Edition}, 2nd~ed. Cambridge, MA, USA:
+Morgan Kaufmann, 2020.
+
+\bibitem{harris_ddca}
+D.~M. Harris and S.~L. Harris, \emph{Digital Design and Computer
+Architecture}, 2nd~ed. San Francisco, CA, USA: Morgan Kaufmann, 2012.
+
+\bibitem{culler_pca}
+D.~E. Culler, J.~P. Singh, and A.~Gupta, \emph{Parallel Computer
+Architecture: A Hardware/Software Approach}. San Francisco, CA, USA: Morgan
+Kaufmann, 1999.
+
+\bibitem{ieee1364}
+\emph{IEEE Standard for Verilog Hardware Description Language}, IEEE Std
+1364-2005, 2006.
+
+\bibitem{icarus}
+S.~Williams, ``Icarus Verilog,'' [Online]. Available:
+\url{https://steveicarus.github.io/iverilog/}
+
+\bibitem{wolf_yosys}
+C.~Wolf, ``Yosys Open SYnthesis Suite,'' [Online]. Available:
+\url{https://yosyshq.net/yosys/}
+
+\end{thebibliography}
+
+\end{document}

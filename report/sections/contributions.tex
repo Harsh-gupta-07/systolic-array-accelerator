@@ -1,0 +1,28 @@
+% contributions.tex  -- written by all members (each edits own row)
+\section{Individual Contributions}
+Table~\ref{tab:contrib} lists each member's work in both phases. All
+members committed their own work from their own GitHub accounts, and each
+member can explain the full design.
+
+\begin{table}[h]
+\centering
+\caption{Individual contributions}
+\label{tab:contrib}
+\setlength{\tabcolsep}{2.5pt}
+\begin{tabular}{@{}p{1.55cm}p{6.35cm}@{}}
+\toprule
+\textbf{Member} & \textbf{Phase~I / Phase~II} \\
+\midrule
+Harshvardhan Gupta & I: architecture spec, number format, \texttt{mac\_unit}, MAC testbench, system diagram.
+II: \texttt{requant}, pipelined MAC (\texttt{MUL\_PIPE}), \texttt{tb\_requant}, \texttt{tb\_mac\_pipe}, numerical-accuracy study, MAC DSP/LUT synthesis; Abstract, Introduction, numerics results. \\
+Harsha Gonela & I: \texttt{pe}, PE testbench, PE figure, literature review.
+II: weight-stationary PE/array/top, \texttt{tb\_ws\_top}, OS vs.\ WS analysis and synthesis; Literature Review, dataflow comparison. \\
+Abhijeet Dey & I: \texttt{systolic\_array}, \texttt{input\_skew}, array testbench, dataflow figure.
+II: accumulate-mode tiling (\texttt{tb\_tiled\_gemm}), array-size sweep (\texttt{tb\_scaling}), analytical performance model (\texttt{perf\_model.py}); latency/throughput and tiling results. \\
+Saumya Kumar & I: buffers, controller, Phase~I top, FSM figure.
+II: ping-pong buffers, controller v2, perf.\ counters, \texttt{systolic\_top\_v2}, buffer-register timing fix, \texttt{tb\_systolic\_top\_v2}, synthesis/P\&R scripts and timing analysis; architecture and timing sections. \\
+Shivansh Upadhyay & I: golden model, system testbench, scripts, report integration.
+II: sequential baseline, 1000-test random regression, golden-model extensions, results tooling, comparison results, Conclusion, final report integration. \\
+\bottomrule
+\end{tabular}
+\end{table}
