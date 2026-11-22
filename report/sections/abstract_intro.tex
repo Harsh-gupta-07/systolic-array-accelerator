@@ -1,0 +1,59 @@
+% abstract_intro.tex  -- written by Harshvardhan
+\begin{abstract}
+Matrix multiplication dominates the arithmetic of modern machine-learning
+workloads, and general-purpose processors execute it inefficiently because
+every multiply-accumulate (MAC) operation re-fetches its operands. Systolic
+arrays, the structure at the core of Google's Tensor Processing Unit, reuse
+each operand across a row or column of processing elements (PEs). This paper
+presents the complete design and evaluation of a synthesizable, parameterised
+$N\times N$ output-stationary systolic-array accelerator in Verilog-2005,
+built around signed Q4.4 operands and 32-bit accumulators. Phase~I delivered
+a verified $4\times4$ prototype. Phase~II adds row-wide double-buffered
+(ping-pong) operand buffers, a result buffer, back-to-back and accumulate
+modes, output requantisation with saturation, hardware performance
+counters, optional pipeline registers, a sequential single-MAC baseline
+and a weight-stationary comparison array. More than 85\,000 element-level
+checks, including a 1000-matrix random regression, pass against a bit-exact
+Python golden model. Overlapping data transfer with computation brings the
+cost of a $4\times4$ product from 60 to 12 cycles. Two pipeline registers
+raise the post-route clock on a Lattice ECP5 FPGA from 51 to 116~MHz, so a
+$4\times4$ product completes every 121~ns: 12.4$\times$ faster than the
+sequential baseline, using 16 DSP blocks. A cycle-exact analytical model
+predicts every measured latency, and the comparison with a
+weight-stationary array explains why output-stationary utilisation is
+capped at one third.
+\end{abstract}
+
+\begin{IEEEkeywords}
+systolic array, matrix multiplication, processing element, MAC,
+fixed-point arithmetic, double buffering, FPGA, Verilog
+\end{IEEEkeywords}
+
+% -----------------------------------------------------------------------------
+\section{Introduction}
+As Dennard scaling ended, performance growth moved from faster general-purpose
+cores to \emph{domain-specific architectures}~\cite{hennessy2019golden}. Deep
+learning is the most prominent target. Its fully connected and convolutional
+layers reduce to general matrix multiplication (GEMM)~\cite{sze2017efficient}.
+On a CPU, a GEMM triple loop is limited by the memory wall: each MAC needs two
+operand loads. A \emph{systolic array}~\cite{kung1979systolic,kung1982why}
+instead passes operands between neighbouring PEs, so an operand fetched once
+feeds a whole row or column. The result is high throughput, short wires and
+a regular structure.
+
+This project designs, verifies and evaluates a small systolic GEMM
+accelerator, in line with Module~6 of the course (heterogeneous computing,
+TPU/AI hardware). It builds on the digital-design foundations of
+Modules~1--2 and on the performance concepts of Modules~4--5 (CPI, Amdahl's
+law, pipelining)~\cite{patterson_cod,harris_ddca}. The work is entirely
+simulation and synthesis based; no board is required. The contributions are:
+\begin{itemize}
+\item a parameterised output-stationary (OS) array with a complete host
+interface, double buffering, accumulate mode and on-chip performance counters;
+\item a sequential single-MAC baseline and a weight-stationary (WS) streaming
+array, both verified, for quantitative comparison;
+\item a verification environment of 10 self-checking testbenches driven by a
+bit-exact golden model;
+\item post-route timing and resource results, a pipelining study and a
+cycle-exact analytical performance model.
+\end{itemize}
