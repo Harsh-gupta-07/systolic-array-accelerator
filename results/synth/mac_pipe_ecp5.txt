@@ -1,0 +1,18 @@
+
+19. Printing statistics.
+
+=== mac_unit ===
+
+   Number of wires:                 71
+   Number of wire bits:            351
+   Number of public wires:          71
+   Number of public wire bits:     351
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                150
+     CCU2C                          16
+     LUT4                           83
+     MULT18X18D                      1
+     TRELLIS_FF                     50
+

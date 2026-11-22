@@ -1,0 +1,20 @@
+
+19. Printing statistics.
+
+=== systolic_top_v2 ===
+
+   Number of wires:               8495
+   Number of wire bits:          21365
+   Number of public wires:        8495
+   Number of public wire bits:   21365
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:              11078
+     CCU2C                         501
+     L6MUX21                       460
+     LUT4                         6686
+     MULT18X18D                     16
+     PFUMX                        1390
+     TRELLIS_FF                   2025
+

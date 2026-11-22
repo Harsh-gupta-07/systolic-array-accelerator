@@ -1,0 +1,21 @@
+
+19. Printing statistics.
+
+=== mac_unit ===
+
+   Number of wires:                112
+   Number of wire bits:            249
+   Number of public wires:           9
+   Number of public wire bits:      54
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                150
+     BUFG                            1
+     DSP48E1                         1
+     FDCE                           32
+     IBUF                           20
+     INV                            32
+     LUT4                           32
+     OBUF                           32
+

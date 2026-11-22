@@ -1,0 +1,703 @@
+
+
+Info: Logic utilisation before packing:
+Info:     Total LUT4s:      7688/83640     9%
+Info:         logic LUTs:   6686/83640     7%
+Info:         carry LUTs:   1002/83640     1%
+Info:           RAM LUTs:      0/10455     0%
+Info:          RAMW LUTs:      0/20910     0%
+
+Info:      Total DFFs:      2025/83640     2%
+
+Info: Packing IOs..
+Info: Packing constants..
+Info: Packing carries...
+Info: Packing LUTs...
+Info: Packing LUT5-7s...
+Info: Packing FFs...
+Info:     1044 FFs paired with LUTs.
+Info: Generating derived timing constraints...
+Info: Promoting globals...
+Info:     promoting clock net clk$TRELLIS_IO_IN to global network
+Info: Checksum: 0x31658e1c
+
+Info: Annotating ports with timing budgets for target frequency 100.00 MHz
+Info: Checksum: 0xc3ff4117
+
+Info: Device utilisation:
+Info: 	          TRELLIS_IO:   243/  365    66%
+Info: 	                DCCA:     1/   56     1%
+Info: 	              DP16KD:     0/  208     0%
+Info: 	          MULT18X18D:    16/  156    10%
+Info: 	              ALU54B:     0/   78     0%
+Info: 	             EHXPLLL:     0/    4     0%
+Info: 	             EXTREFB:     0/    2     0%
+Info: 	                DCUA:     0/    2     0%
+Info: 	           PCSCLKDIV:     0/    2     0%
+Info: 	             IOLOGIC:     0/  224     0%
+Info: 	            SIOLOGIC:     0/  141     0%
+Info: 	                 GSR:     0/    1     0%
+Info: 	               JTAGG:     0/    1     0%
+Info: 	                OSCG:     0/    1     0%
+Info: 	               SEDGA:     0/    1     0%
+Info: 	                 DTR:     0/    1     0%
+Info: 	             USRMCLK:     0/    1     0%
+Info: 	             CLKDIVF:     0/    4     0%
+Info: 	           ECLKSYNCB:     0/   10     0%
+Info: 	             DLLDELD:     0/    8     0%
+Info: 	              DDRDLL:     0/    4     0%
+Info: 	             DQSBUFM:     0/   14     0%
+Info: 	     TRELLIS_ECLKBUF:     0/    8     0%
+Info: 	        ECLKBRIDGECS:     0/    2     0%
+Info: 	                DCSC:     0/    2     0%
+Info: 	          TRELLIS_FF:  2025/83640     2%
+Info: 	        TRELLIS_COMB:  7838/83640     9%
+Info: 	        TRELLIS_RAMW:     0/10455     0%
+
+Info: Placed 0 cells based on constraints.
+Info: Creating initial analytic placement for 5868 cells, random placement wirelen = 601905.
+Info:     at initial placer iter 0, wirelen = 32662
+Info:     at initial placer iter 1, wirelen = 22759
+Info:     at initial placer iter 2, wirelen = 22120
+Info:     at initial placer iter 3, wirelen = 21886
+Info: Running main analytical placer, max placement attempts per cell = 12809391.
+Info:     at iteration #1, type ALL: wirelen solved = 21888, spread = 77843, legal = 106111; time = 0.42s
+Info:     at iteration #2, type ALL: wirelen solved = 29606, spread = 62511, legal = 93375; time = 0.43s
+Info:     at iteration #3, type ALL: wirelen solved = 31455, spread = 58235, legal = 88099; time = 0.41s
+Info:     at iteration #4, type ALL: wirelen solved = 33003, spread = 54811, legal = 84881; time = 0.42s
+Info:     at iteration #5, type ALL: wirelen solved = 34676, spread = 54225, legal = 87326; time = 0.45s
+Info:     at iteration #6, type ALL: wirelen solved = 35295, spread = 53586, legal = 86499; time = 0.47s
+Info:     at iteration #7, type ALL: wirelen solved = 35981, spread = 50867, legal = 85081; time = 0.46s
+Info:     at iteration #8, type ALL: wirelen solved = 36283, spread = 51733, legal = 86653; time = 0.46s
+Info:     at iteration #9, type ALL: wirelen solved = 36963, spread = 51279, legal = 83142; time = 0.45s
+Info:     at iteration #10, type ALL: wirelen solved = 37372, spread = 50501, legal = 79013; time = 0.39s
+Info:     at iteration #11, type ALL: wirelen solved = 37969, spread = 49574, legal = 80113; time = 0.40s
+Info:     at iteration #12, type ALL: wirelen solved = 38429, spread = 48803, legal = 80262; time = 0.39s
+Info:     at iteration #13, type ALL: wirelen solved = 38312, spread = 48506, legal = 77199; time = 0.36s
+Info:     at iteration #14, type ALL: wirelen solved = 38930, spread = 49253, legal = 75742; time = 0.33s
+Info:     at iteration #15, type ALL: wirelen solved = 39647, spread = 50074, legal = 71183; time = 0.30s
+Info:     at iteration #16, type ALL: wirelen solved = 40607, spread = 49314, legal = 73368; time = 0.31s
+Info:     at iteration #17, type ALL: wirelen solved = 41140, spread = 49394, legal = 73037; time = 0.29s
+Info:     at iteration #18, type ALL: wirelen solved = 41555, spread = 51035, legal = 73431; time = 0.30s
+Info:     at iteration #19, type ALL: wirelen solved = 42193, spread = 51941, legal = 73636; time = 0.27s
+Info:     at iteration #20, type ALL: wirelen solved = 43673, spread = 51608, legal = 73218; time = 0.28s
+Info: HeAP Placer Time: 9.10s
+Info:   of which solving equations: 2.41s
+Info:   of which spreading cells: 0.54s
+Info:   of which strict legalisation: 4.96s
+
+Info: Running simulated annealing placer for refinement.
+Info:   at iteration #1: temp = 0.000000, timing cost = 1530, wirelen = 71183
+Info:   at iteration #5: temp = 0.000000, timing cost = 428, wirelen = 53217
+Info:   at iteration #10: temp = 0.000000, timing cost = 450, wirelen = 51114
+Info:   at iteration #15: temp = 0.000000, timing cost = 465, wirelen = 50403
+Info:   at iteration #20: temp = 0.000000, timing cost = 449, wirelen = 49892
+Info:   at iteration #23: temp = 0.000000, timing cost = 470, wirelen = 49832 
+Info: SA placement time 10.45s
+
+Info: Max frequency for clock '$glbnet$clk$TRELLIS_IO_IN': 47.40 MHz (FAIL at 100.00 MHz)
+
+Info: Max delay <async>                           -> <async>                          : 48.28 ns
+Info: Max delay <async>                           -> posedge $glbnet$clk$TRELLIS_IO_IN: 36.27 ns
+Info: Max delay posedge $glbnet$clk$TRELLIS_IO_IN -> <async>                          : 33.06 ns
+
+Info: Slack histogram:
+Info:  legend: * represents 25 endpoint(s)
+Info:          + represents [1,25) endpoint(s)
+Info: [-38285, -35908) |+
+Info: [-35908, -33531) |+
+Info: [-33531, -31154) |+
+Info: [-31154, -28777) |+
+Info: [-28777, -26400) |+
+Info: [-26400, -24023) |*+
+Info: [-24023, -21646) |*******+
+Info: [-21646, -19269) |**********+
+Info: [-19269, -16892) |***+
+Info: [-16892, -14515) |*+
+Info: [-14515, -12138) |*+
+Info: [-12138,  -9761) |**+
+Info: [ -9761,  -7384) |****+
+Info: [ -7384,  -5007) |**************+
+Info: [ -5007,  -2630) |****************************************************+
+Info: [ -2630,   -253) |************************************************************ 
+Info: [  -253,   2124) |***********************************************************+
+Info: [  2124,   4501) |********************************+
+Info: [  4501,   6878) |********************+
+Info: [  6878,   9255) |*******+
+Info: Checksum: 0x530968b7
+Info: Routing globals...
+Info:     routing clock net $glbnet$clk$TRELLIS_IO_IN using global 0
+
+Info: Routing..
+Info: Setting up routing queue.
+Info: Routing 25308 arcs.
+Info:            |   (re-)routed arcs  |   delta    | remaining|       time spent     |
+Info:    IterCnt |  w/ripup   wo/ripup |  w/r  wo/r |      arcs| batch(sec) total(sec)|
+Info:       1000 |      338        661 |  338   661 |     24825|       0.43       0.43|
+Info:       2000 |      523       1476 |  185   815 |     24139|       0.19       0.63|
+Info:       3000 |      666       2333 |  143   857 |     23528|       0.17       0.80|
+Info:       4000 |      904       3095 |  238   762 |     23008|       0.17       0.97|
+Info:       5000 |     1011       3988 |  107   893 |     22164|       0.15       1.12|
+Info:       6000 |     1139       4860 |  128   872 |     21409|       0.13       1.25|
+Info:       7000 |     1231       5768 |   92   908 |     20544|       0.16       1.40|
+Info:       8000 |     1345       6623 |  114   855 |     19681|       0.20       1.60|
+Info:       9000 |     1418       7365 |   73   742 |     18902|       0.11       1.71|
+Info:      10000 |     1498       8230 |   80   865 |     18013|       0.10       1.81|
+Info:      11000 |     1603       9073 |  105   843 |     17170|       0.12       1.93|
+Info:      12000 |     1701       9896 |   98   823 |     16280|       0.10       2.03|
+Info:      13000 |     1785      10644 |   84   748 |     15364|       0.08       2.11|
+Info:      14000 |     1803      11546 |   18   902 |     14385|       0.06       2.17|
+Info:      15000 |     1875      12401 |   72   855 |     13511|       0.12       2.30|
+Info:      16000 |     1897      13301 |   22   900 |     12588|       0.14       2.44|
+Info:      17000 |     1932      14175 |   35   874 |     11648|       0.16       2.60|
+Info:      18000 |     2004      15013 |   72   838 |     10743|       0.17       2.77|
+Info:      19000 |     2052      15887 |   48   874 |      9822|       0.15       2.92|
+Info:      20000 |     2114      16750 |   62   863 |      8915|       0.15       3.07|
+Info:      21000 |     2171      17622 |   57   872 |      8128|       0.16       3.23|
+Info:      22000 |     2241      18462 |   70   840 |      7206|       0.16       3.39|
+Info:      23000 |     2346      19283 |  105   821 |      6404|       0.17       3.56|
+Info:      24000 |     2442      20100 |   96   817 |      5574|       0.16       3.72|
+Info:      25000 |     2566      20897 |  124   797 |      4769|       0.18       3.90|
+Info:      26000 |     2692      21702 |  126   805 |      4016|       0.18       4.08|
+Info:      27000 |     2795      22511 |  103   809 |      3144|       0.18       4.25|
+Info:      28000 |     2911      23320 |  116   809 |      2292|       0.20       4.46|
+Info:      29000 |     3074      24096 |  163   776 |      1539|       0.19       4.65|
+Info:      30000 |     3255      24846 |  181   750 |       832|       0.19       4.85|
+Info:      31000 |     3438      25603 |  183   757 |        81|       0.20       5.04|
+Info:      31094 |     3452      25677 |   14    74 |         0|       0.07       5.11|
+Info: Routing complete.
+Info: Router1 time 5.11s
+Info: Checksum: 0x2498e237
+
+Info: Critical path report for clock '$glbnet$clk$TRELLIS_IO_IN' (posedge -> posedge):
+Info: curr total
+Info:  0.5  0.5  Source u_array.g_row[0].g_col[0].u_pe.a_out_TRELLIS_FF_Q_3.Q
+Info:  3.4  3.9    Net u_array.a_link[1][4] budget 0.850000 ns (71,35) -> (54,10)
+Info:                Sink u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_MULT18X18D_P0.A4
+Info:                Defined in:
+Info:                  ../rtl/systolic_top_v2.v:89.82-92.6
+Info:                  ../rtl/pe.v:47.7-55.6
+Info:                  ../rtl/mac_unit.v:35.37-35.38
+Info:                  ../rtl/systolic_array.v:69.19-79.18
+Info:  3.9  7.8  Source u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_MULT18X18D_P0.P0
+Info:  2.5 10.3    Net u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s[0] budget 0.849000 ns (54,10) -> (62,23)
+Info:                Sink u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_15$CCU2_COMB0.A
+Info:                Defined in:
+Info:                  ../rtl/systolic_top_v2.v:89.82-92.6
+Info:                  ../rtl/pe.v:47.7-55.6
+Info:                  ../rtl/mac_unit.v:75.29-75.40
+Info:                  ../rtl/systolic_array.v:69.19-79.18
+Info:  0.4 10.8  Source u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_15$CCU2_COMB0.FCO
+Info:  0.0 10.8    Net u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_15$CCU2_FCI_INT budget 0.000000 ns (62,23) -> (62,23)
+Info:                Sink u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_15$CCU2_COMB1.FCI
+Info:  0.0 10.8  Source u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_15$CCU2_COMB1.FCO
+Info:  0.0 10.8    Net u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_3_COUT[1] budget 0.000000 ns (62,23) -> (62,23)
+Info:                Sink u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_4$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/systolic_top_v2.v:89.82-92.6
+Info:                  ../rtl/pe.v:47.7-55.6
+Info:                  ../rtl/mac_unit.v:84.20-84.37
+Info:                  ../rtl/systolic_array.v:69.19-79.18
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.1 10.9  Source u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_4$CCU2_COMB0.FCO
+Info:  0.0 10.9    Net u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_4$CCU2_FCI_INT budget 0.000000 ns (62,23) -> (62,23)
+Info:                Sink u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_4$CCU2_COMB1.FCI
+Info:  0.0 10.9  Source u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_4$CCU2_COMB1.FCO
+Info:  0.0 10.9    Net u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_3_COUT[3] budget 0.000000 ns (62,23) -> (62,23)
+Info:                Sink u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_2$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/systolic_top_v2.v:89.82-92.6
+Info:                  ../rtl/pe.v:47.7-55.6
+Info:                  ../rtl/mac_unit.v:84.20-84.37
+Info:                  ../rtl/systolic_array.v:69.19-79.18
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.1 10.9  Source u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_2$CCU2_COMB0.FCO
+Info:  0.0 10.9    Net u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_2$CCU2_FCI_INT budget 0.000000 ns (62,23) -> (62,23)
+Info:                Sink u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_2$CCU2_COMB1.FCI
+Info:  0.0 10.9  Source u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_2$CCU2_COMB1.FCO
+Info:  0.0 10.9    Net u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_3_COUT[5] budget 0.000000 ns (62,23) -> (63,23)
+Info:                Sink u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_1$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/systolic_top_v2.v:89.82-92.6
+Info:                  ../rtl/pe.v:47.7-55.6
+Info:                  ../rtl/mac_unit.v:84.20-84.37
+Info:                  ../rtl/systolic_array.v:69.19-79.18
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.1 11.0  Source u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_1$CCU2_COMB0.FCO
+Info:  0.0 11.0    Net u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_1$CCU2_FCI_INT budget 0.000000 ns (63,23) -> (63,23)
+Info:                Sink u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_1$CCU2_COMB1.FCI
+Info:  0.0 11.0  Source u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_1$CCU2_COMB1.FCO
+Info:  0.0 11.0    Net u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_3_COUT[7] budget 0.000000 ns (63,23) -> (63,23)
+Info:                Sink u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/systolic_top_v2.v:89.82-92.6
+Info:                  ../rtl/pe.v:47.7-55.6
+Info:                  ../rtl/mac_unit.v:84.20-84.37
+Info:                  ../rtl/systolic_array.v:69.19-79.18
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.1 11.1  Source u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0$CCU2_COMB0.FCO
+Info:  0.0 11.1    Net u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0$CCU2_FCI_INT budget 0.000000 ns (63,23) -> (63,23)
+Info:                Sink u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0$CCU2_COMB1.FCI
+Info:  0.0 11.1  Source u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0$CCU2_COMB1.FCO
+Info:  0.0 11.1    Net u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_3_COUT[9] budget 0.000000 ns (63,23) -> (63,23)
+Info:                Sink u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_14$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/systolic_top_v2.v:89.82-92.6
+Info:                  ../rtl/pe.v:47.7-55.6
+Info:                  ../rtl/mac_unit.v:84.20-84.37
+Info:                  ../rtl/systolic_array.v:69.19-79.18
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.1 11.2  Source u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_14$CCU2_COMB0.FCO
+Info:  0.0 11.2    Net u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_14$CCU2_FCI_INT budget 0.000000 ns (63,23) -> (63,23)
+Info:                Sink u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_14$CCU2_COMB1.FCI
+Info:  0.0 11.2  Source u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_14$CCU2_COMB1.FCO
+Info:  0.0 11.2    Net u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_3_COUT[11] budget 0.000000 ns (63,23) -> (63,23)
+Info:                Sink u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_13$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/systolic_top_v2.v:89.82-92.6
+Info:                  ../rtl/pe.v:47.7-55.6
+Info:                  ../rtl/mac_unit.v:84.20-84.37
+Info:                  ../rtl/systolic_array.v:69.19-79.18
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.1 11.2  Source u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_13$CCU2_COMB0.FCO
+Info:  0.0 11.2    Net u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_13$CCU2_FCI_INT budget 0.000000 ns (63,23) -> (63,23)
+Info:                Sink u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_13$CCU2_COMB1.FCI
+Info:  0.0 11.2  Source u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_13$CCU2_COMB1.FCO
+Info:  0.0 11.2    Net u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_3_COUT[13] budget 0.000000 ns (63,23) -> (64,23)
+Info:                Sink u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_12$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/systolic_top_v2.v:89.82-92.6
+Info:                  ../rtl/pe.v:47.7-55.6
+Info:                  ../rtl/mac_unit.v:84.20-84.37
+Info:                  ../rtl/systolic_array.v:69.19-79.18
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.1 11.3  Source u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_12$CCU2_COMB0.FCO
+Info:  0.0 11.3    Net u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_12$CCU2_FCI_INT budget 0.000000 ns (64,23) -> (64,23)
+Info:                Sink u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_12$CCU2_COMB1.FCI
+Info:  0.0 11.3  Source u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_12$CCU2_COMB1.FCO
+Info:  0.0 11.3    Net u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_3_COUT[15] budget 0.000000 ns (64,23) -> (64,23)
+Info:                Sink u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_11$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/systolic_top_v2.v:89.82-92.6
+Info:                  ../rtl/pe.v:47.7-55.6
+Info:                  ../rtl/mac_unit.v:84.20-84.37
+Info:                  ../rtl/systolic_array.v:69.19-79.18
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.1 11.4  Source u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_11$CCU2_COMB0.FCO
+Info:  0.0 11.4    Net u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_11$CCU2_FCI_INT budget 0.000000 ns (64,23) -> (64,23)
+Info:                Sink u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_11$CCU2_COMB1.FCI
+Info:  0.0 11.4  Source u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_11$CCU2_COMB1.FCO
+Info:  0.0 11.4    Net u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_3_COUT[17] budget 0.000000 ns (64,23) -> (64,23)
+Info:                Sink u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_10$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/systolic_top_v2.v:89.82-92.6
+Info:                  ../rtl/pe.v:47.7-55.6
+Info:                  ../rtl/mac_unit.v:84.20-84.37
+Info:                  ../rtl/systolic_array.v:69.19-79.18
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.1 11.4  Source u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_10$CCU2_COMB0.FCO
+Info:  0.0 11.4    Net u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_10$CCU2_FCI_INT budget 0.000000 ns (64,23) -> (64,23)
+Info:                Sink u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_10$CCU2_COMB1.FCI
+Info:  0.0 11.4  Source u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_10$CCU2_COMB1.FCO
+Info:  0.0 11.4    Net u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_3_COUT[19] budget 0.000000 ns (64,23) -> (64,23)
+Info:                Sink u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_9$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/systolic_top_v2.v:89.82-92.6
+Info:                  ../rtl/pe.v:47.7-55.6
+Info:                  ../rtl/mac_unit.v:84.20-84.37
+Info:                  ../rtl/systolic_array.v:69.19-79.18
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.4 11.9  Source u_array.g_row[0].g_col[1].u_pe.u_mac.prod_s_CCU2C_A0_9$CCU2_COMB0.F
+Info:  1.9 13.8    Net u_array.g_row[0].g_col[1].u_pe.u_mac.acc_TRELLIS_FF_Q_DI_LUT4_Z_D[20] budget 0.946000 ns (64,23) -> (74,35)
+Info:                Sink u_array.g_row[0].g_col[1].u_pe.u_mac.acc_TRELLIS_FF_Q_11_DI_LUT4_Z.D
+Info:                Defined in:
+Info:                  ../rtl/systolic_top_v2.v:89.82-92.6
+Info:                  ../rtl/pe.v:47.7-55.6
+Info:                  ../rtl/mac_unit.v:84.20-84.37
+Info:                  ../rtl/systolic_array.v:69.19-79.18
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:34.26-34.27
+Info:  0.2 14.0  Source u_array.g_row[0].g_col[1].u_pe.u_mac.acc_TRELLIS_FF_Q_11_DI_LUT4_Z.F
+Info:  0.1 14.2    Net u_array.g_row[0].g_col[1].u_pe.u_mac.acc_TRELLIS_FF_Q_11_DI budget 0.945000 ns (74,35) -> (74,35)
+Info:                Sink u_array.g_row[0].g_col[1].u_pe.u_mac.acc_TRELLIS_FF_Q_11.DI
+Info:                Defined in:
+Info:                  ../rtl/systolic_top_v2.v:89.82-92.6
+Info:                  ../rtl/pe.v:47.7-55.6
+Info:                  ../rtl/mac_unit.v:78.5-85.8
+Info:                  ../rtl/systolic_array.v:69.19-79.18
+Info:  0.0 14.2  Setup u_array.g_row[0].g_col[1].u_pe.u_mac.acc_TRELLIS_FF_Q_11.DI
+Info: 6.2 ns logic, 7.9 ns routing
+
+Info: Critical path report for cross-domain path '<async>' -> '<async>':
+Info: curr total
+Info:  0.0  0.0  Source rd_row[0]$tr_io.O
+Info:  8.4  8.4    Net rd_data_PFUMX_Z_100_BLUT_LUT4_Z_D[3] budget 0.000000 ns (103,95) -> (47,7)
+Info:                Sink rd_data_PFUMX_Z_47_BLUT_LUT4_Z_D_LUT4_Z.D
+Info:                Defined in:
+Info:                  ../rtl/systolic_top_v2.v:53.37-53.43
+Info:  0.2  8.7  Source rd_data_PFUMX_Z_47_BLUT_LUT4_Z_D_LUT4_Z.F
+Info:  1.6 10.3    Net rd_data_PFUMX_Z_47_BLUT_LUT4_Z_D[2] budget 0.000000 ns (47,7) -> (65,7)
+Info:                Sink rd_data_PFUMX_Z_47_BLUT_LUT4_Z.D
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ecp5/cells_map.v:108.23-108.24
+Info:  0.4 10.7  Source rd_data_PFUMX_Z_47_BLUT_LUT4_Z.OFX
+Info:  1.9 12.6    Net rd_data[80]$TRELLIS_IO_OUT budget 0.000000 ns (65,7) -> (62,15)
+Info:                Sink g_rq[2].u_rq.rounded_CCU2C_S0_12$CCU2_COMB1.B
+Info:                Defined in:
+Info:                  ../rtl/systolic_top_v2.v:54.37-54.44
+Info:  0.4 13.1  Source g_rq[2].u_rq.rounded_CCU2C_S0_12$CCU2_COMB1.FCO
+Info:  0.0 13.1    Net g_rq[2].u_rq.rounded_CCU2C_S0_4_COUT[13] budget 0.000000 ns (62,15) -> (63,15)
+Info:                Sink g_rq[2].u_rq.rounded_CCU2C_S0_11$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/systolic_top_v2.v:106.97-110.14
+Info:                  ../rtl/requant.v:45.30-45.73
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.1 13.1  Source g_rq[2].u_rq.rounded_CCU2C_S0_11$CCU2_COMB0.FCO
+Info:  0.0 13.1    Net g_rq[2].u_rq.rounded_CCU2C_S0_11$CCU2_FCI_INT budget 0.000000 ns (63,15) -> (63,15)
+Info:                Sink g_rq[2].u_rq.rounded_CCU2C_S0_11$CCU2_COMB1.FCI
+Info:  0.0 13.1  Source g_rq[2].u_rq.rounded_CCU2C_S0_11$CCU2_COMB1.FCO
+Info:  0.0 13.1    Net g_rq[2].u_rq.rounded_CCU2C_S0_4_COUT[15] budget 0.000000 ns (63,15) -> (63,15)
+Info:                Sink g_rq[2].u_rq.rounded_CCU2C_S0_10$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/systolic_top_v2.v:106.97-110.14
+Info:                  ../rtl/requant.v:45.30-45.73
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.1 13.2  Source g_rq[2].u_rq.rounded_CCU2C_S0_10$CCU2_COMB0.FCO
+Info:  0.0 13.2    Net g_rq[2].u_rq.rounded_CCU2C_S0_10$CCU2_FCI_INT budget 0.000000 ns (63,15) -> (63,15)
+Info:                Sink g_rq[2].u_rq.rounded_CCU2C_S0_10$CCU2_COMB1.FCI
+Info:  0.4 13.6  Source g_rq[2].u_rq.rounded_CCU2C_S0_10$CCU2_COMB1.F
+Info:  1.5 15.1    Net g_rq[2].u_rq.rounded[20] budget 0.493000 ns (63,15) -> (62,17)
+Info:                Sink rd_q_LUT4_Z_23_B_LUT4_Z_1_C_LUT4_Z_B_LUT4_Z_2_A_LUT4_Z_A_LUT4_Z.D
+Info:                Defined in:
+Info:                  ../rtl/systolic_top_v2.v:106.97-110.14
+Info:                  ../rtl/requant.v:41.26-41.33
+Info:  0.2 15.4  Source rd_q_LUT4_Z_23_B_LUT4_Z_1_C_LUT4_Z_B_LUT4_Z_2_A_LUT4_Z_A_LUT4_Z.F
+Info:  1.4 16.8    Net rd_q_LUT4_Z_23_B_LUT4_Z_1_C_LUT4_Z_B_LUT4_Z_2_A_LUT4_Z_A[0] budget 0.493000 ns (62,17) -> (65,15)
+Info:                Sink rd_q_LUT4_Z_23_B_LUT4_Z_1_C_LUT4_Z_B_LUT4_Z_2_A_LUT4_Z.A
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ecp5/cells_map.v:108.23-108.24
+Info:  0.2 17.0  Source rd_q_LUT4_Z_23_B_LUT4_Z_1_C_LUT4_Z_B_LUT4_Z_2_A_LUT4_Z.F
+Info:  0.6 17.6    Net rd_q_LUT4_Z_23_B_LUT4_Z_1_C_LUT4_Z_B_LUT4_Z_2_A[0] budget 0.492000 ns (65,15) -> (65,15)
+Info:                Sink rd_q_LUT4_Z_23_B_LUT4_Z_1_C_LUT4_Z_B_LUT4_Z_2.A
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ecp5/cells_map.v:108.23-108.24
+Info:  0.2 17.9  Source rd_q_LUT4_Z_23_B_LUT4_Z_1_C_LUT4_Z_B_LUT4_Z_2.F
+Info:  0.7 18.5    Net rd_q_LUT4_Z_23_B_LUT4_Z_1_C_LUT4_Z_B[3] budget 0.492000 ns (65,15) -> (66,15)
+Info:                Sink rd_q_LUT4_Z_23_B_LUT4_Z_1_C_LUT4_Z.D
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ecp5/cells_map.v:108.23-108.24
+Info:  0.2 18.8  Source rd_q_LUT4_Z_23_B_LUT4_Z_1_C_LUT4_Z.F
+Info:  0.7 19.4    Net rd_q_LUT4_Z_23_B_LUT4_Z_1_C[2] budget 0.431000 ns (66,15) -> (66,16)
+Info:                Sink rd_q_LUT4_Z_23_B_LUT4_Z_1.C
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ecp5/cells_map.v:108.23-108.24
+Info:  0.2 19.7  Source rd_q_LUT4_Z_23_B_LUT4_Z_1.F
+Info:  2.8 22.5    Net rd_q_LUT4_Z_23_B[0] budget 0.431000 ns (66,16) -> (63,42)
+Info:                Sink rd_q_LUT4_Z_17.B
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ecp5/cells_map.v:108.23-108.24
+Info:  0.2 22.7  Source rd_q_LUT4_Z_17.F
+Info:  5.1 27.8    Net rd_q[22]$TRELLIS_IO_OUT budget 0.431000 ns (63,42) -> (0,62)
+Info:                Sink rd_q[22]$tr_io.I
+Info:                Defined in:
+Info:                  ../rtl/systolic_top_v2.v:55.37-55.41
+Info: 3.0 ns logic, 24.7 ns routing
+
+Info: Critical path report for cross-domain path '<async>' -> 'posedge $glbnet$clk$TRELLIS_IO_IN':
+Info: curr total
+Info:  0.0  0.0  Source wr_row[0]$tr_io.O
+Info:  6.2  6.2    Net wr_row[0]$TRELLIS_IO_IN budget 0.000000 ns (13,95) -> (46,31)
+Info:                Sink u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_PFUMX_Z_C0_L6MUX21_Z_SD_CCU2C_S0_COUT_CCU2C_COUT_2$CCU2_COMB1.B
+Info:                Defined in:
+Info:                  ../rtl/systolic_top_v2.v:50.37-50.43
+Info:  0.4  6.7  Source u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_PFUMX_Z_C0_L6MUX21_Z_SD_CCU2C_S0_COUT_CCU2C_COUT_2$CCU2_COMB1.FCO
+Info:  0.0  6.7    Net u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_PFUMX_Z_C0_L6MUX21_Z_SD_CCU2C_S0_COUT[6] budget 0.000000 ns (46,31) -> (47,31)
+Info:                Sink u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_PFUMX_Z_C0_L6MUX21_Z_SD_CCU2C_S0_COUT_CCU2C_COUT_1$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/systolic_top_v2.v:77.76-82.6
+Info:                  ../rtl/matrix_buffer_pp.v:0.0-0.0
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:65.22-65.25
+Info:  0.1  6.8  Source u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_PFUMX_Z_C0_L6MUX21_Z_SD_CCU2C_S0_COUT_CCU2C_COUT_1$CCU2_COMB0.FCO
+Info:  0.0  6.8    Net u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_PFUMX_Z_C0_L6MUX21_Z_SD_CCU2C_S0_COUT_CCU2C_COUT_1$CCU2_FCI_INT budget 0.000000 ns (47,31) -> (47,31)
+Info:                Sink u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_PFUMX_Z_C0_L6MUX21_Z_SD_CCU2C_S0_COUT_CCU2C_COUT_1$CCU2_COMB1.FCI
+Info:  0.0  6.8  Source u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_PFUMX_Z_C0_L6MUX21_Z_SD_CCU2C_S0_COUT_CCU2C_COUT_1$CCU2_COMB1.FCO
+Info:  0.0  6.8    Net u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_PFUMX_Z_C0_L6MUX21_Z_SD_CCU2C_S0_COUT[8] budget 0.000000 ns (47,31) -> (47,31)
+Info:                Sink u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_PFUMX_Z_C0_L6MUX21_Z_SD_CCU2C_S0_COUT_CCU2C_COUT$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/systolic_top_v2.v:77.76-82.6
+Info:                  ../rtl/matrix_buffer_pp.v:0.0-0.0
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:65.22-65.25
+Info:  0.1  6.8  Source u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_PFUMX_Z_C0_L6MUX21_Z_SD_CCU2C_S0_COUT_CCU2C_COUT$CCU2_COMB0.FCO
+Info:  0.0  6.8    Net u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_PFUMX_Z_C0_L6MUX21_Z_SD_CCU2C_S0_COUT_CCU2C_COUT$CCU2_FCI_INT budget 0.000000 ns (47,31) -> (47,31)
+Info:                Sink u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_PFUMX_Z_C0_L6MUX21_Z_SD_CCU2C_S0_COUT_CCU2C_COUT$CCU2_COMB1.FCI
+Info:  0.0  6.8  Source u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_PFUMX_Z_C0_L6MUX21_Z_SD_CCU2C_S0_COUT_CCU2C_COUT$CCU2_COMB1.FCO
+Info:  0.0  6.8    Net u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_PFUMX_Z_C0_L6MUX21_Z_SD_CCU2C_S0_COUT[10] budget 0.000000 ns (47,31) -> (47,31)
+Info:                Sink u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_PFUMX_Z_C0_L6MUX21_Z_SD_CCU2C_S0_COUT_CCU2C_COUT_11$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/systolic_top_v2.v:77.76-82.6
+Info:                  ../rtl/matrix_buffer_pp.v:0.0-0.0
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:65.22-65.25
+Info:  0.1  6.9  Source u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_PFUMX_Z_C0_L6MUX21_Z_SD_CCU2C_S0_COUT_CCU2C_COUT_11$CCU2_COMB0.FCO
+Info:  0.0  6.9    Net u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_PFUMX_Z_C0_L6MUX21_Z_SD_CCU2C_S0_COUT_CCU2C_COUT_11$CCU2_FCI_INT budget 0.000000 ns (47,31) -> (47,31)
+Info:                Sink u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_PFUMX_Z_C0_L6MUX21_Z_SD_CCU2C_S0_COUT_CCU2C_COUT_11$CCU2_COMB1.FCI
+Info:  0.0  6.9  Source u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_PFUMX_Z_C0_L6MUX21_Z_SD_CCU2C_S0_COUT_CCU2C_COUT_11$CCU2_COMB1.FCO
+Info:  0.0  6.9    Net u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_PFUMX_Z_C0_L6MUX21_Z_SD_CCU2C_S0_COUT[12] budget 0.000000 ns (47,31) -> (47,31)
+Info:                Sink u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_PFUMX_Z_C0_L6MUX21_Z_SD_CCU2C_S0_COUT_CCU2C_COUT_10$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/systolic_top_v2.v:77.76-82.6
+Info:                  ../rtl/matrix_buffer_pp.v:0.0-0.0
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:65.22-65.25
+Info:  0.1  7.0  Source u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_PFUMX_Z_C0_L6MUX21_Z_SD_CCU2C_S0_COUT_CCU2C_COUT_10$CCU2_COMB0.FCO
+Info:  0.0  7.0    Net u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_PFUMX_Z_C0_L6MUX21_Z_SD_CCU2C_S0_COUT_CCU2C_COUT_10$CCU2_FCI_INT budget 0.000000 ns (47,31) -> (47,31)
+Info:                Sink u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_PFUMX_Z_C0_L6MUX21_Z_SD_CCU2C_S0_COUT_CCU2C_COUT_10$CCU2_COMB1.FCI
+Info:  0.0  7.0  Source u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_PFUMX_Z_C0_L6MUX21_Z_SD_CCU2C_S0_COUT_CCU2C_COUT_10$CCU2_COMB1.FCO
+Info:  0.0  7.0    Net u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_PFUMX_Z_C0_L6MUX21_Z_SD_CCU2C_S0_COUT[14] budget 0.000000 ns (47,31) -> (48,31)
+Info:                Sink u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_PFUMX_Z_C0_L6MUX21_Z_SD_CCU2C_S0_COUT_CCU2C_COUT_9$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/systolic_top_v2.v:77.76-82.6
+Info:                  ../rtl/matrix_buffer_pp.v:0.0-0.0
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:65.22-65.25
+Info:  0.1  7.0  Source u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_PFUMX_Z_C0_L6MUX21_Z_SD_CCU2C_S0_COUT_CCU2C_COUT_9$CCU2_COMB0.FCO
+Info:  0.0  7.0    Net u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_PFUMX_Z_C0_L6MUX21_Z_SD_CCU2C_S0_COUT_CCU2C_COUT_9$CCU2_FCI_INT budget 0.000000 ns (48,31) -> (48,31)
+Info:                Sink u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_PFUMX_Z_C0_L6MUX21_Z_SD_CCU2C_S0_COUT_CCU2C_COUT_9$CCU2_COMB1.FCI
+Info:  0.0  7.0  Source u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_PFUMX_Z_C0_L6MUX21_Z_SD_CCU2C_S0_COUT_CCU2C_COUT_9$CCU2_COMB1.FCO
+Info:  0.0  7.0    Net u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_PFUMX_Z_C0_L6MUX21_Z_SD_CCU2C_S0_COUT[16] budget 0.000000 ns (48,31) -> (48,31)
+Info:                Sink u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_PFUMX_Z_C0_L6MUX21_Z_SD_CCU2C_S0_COUT_CCU2C_COUT_8$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/systolic_top_v2.v:77.76-82.6
+Info:                  ../rtl/matrix_buffer_pp.v:0.0-0.0
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:65.22-65.25
+Info:  0.1  7.1  Source u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_PFUMX_Z_C0_L6MUX21_Z_SD_CCU2C_S0_COUT_CCU2C_COUT_8$CCU2_COMB0.FCO
+Info:  0.0  7.1    Net u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_PFUMX_Z_C0_L6MUX21_Z_SD_CCU2C_S0_COUT_CCU2C_COUT_8$CCU2_FCI_INT budget 0.000000 ns (48,31) -> (48,31)
+Info:                Sink u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_PFUMX_Z_C0_L6MUX21_Z_SD_CCU2C_S0_COUT_CCU2C_COUT_8$CCU2_COMB1.FCI
+Info:  0.0  7.1  Source u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_PFUMX_Z_C0_L6MUX21_Z_SD_CCU2C_S0_COUT_CCU2C_COUT_8$CCU2_COMB1.FCO
+Info:  0.0  7.1    Net u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_PFUMX_Z_C0_L6MUX21_Z_SD_CCU2C_S0_COUT[18] budget 0.000000 ns (48,31) -> (48,31)
+Info:                Sink u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_PFUMX_Z_C0_L6MUX21_Z_SD_CCU2C_S0_COUT_CCU2C_COUT_7$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/systolic_top_v2.v:77.76-82.6
+Info:                  ../rtl/matrix_buffer_pp.v:0.0-0.0
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:65.22-65.25
+Info:  0.4  7.5  Source u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_PFUMX_Z_C0_L6MUX21_Z_SD_CCU2C_S0_COUT_CCU2C_COUT_7$CCU2_COMB0.F
+Info:  1.1  8.7    Net u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_PFUMX_Z_C0_L6MUX21_Z_SD_CCU2C_S0_COUT_CCU2C_COUT_S1[18] budget 0.000000 ns (48,31) -> (48,30)
+Info:                Sink u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_L6MUX21_Z_SD_LUT4_Z_5.C
+Info:                Defined in:
+Info:                  ../rtl/systolic_top_v2.v:77.76-82.6
+Info:                  ../rtl/matrix_buffer_pp.v:0.0-0.0
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:34.26-34.27
+Info:  0.2  8.9  Source u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_L6MUX21_Z_SD_LUT4_Z_5.F
+Info:  0.9  9.8    Net u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_L6MUX21_Z_SD[0] budget 0.000000 ns (48,30) -> (47,30)
+Info:                Sink u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_L6MUX21_Z_D1_PFUMX_Z_ALUT_LUT4_Z.A
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ecp5/cells_map.v:108.23-108.24
+Info:  0.2 10.1  Source u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_L6MUX21_Z_D1_PFUMX_Z_ALUT_LUT4_Z.F
+Info:  0.0 10.1    Net u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_L6MUX21_Z_D1_PFUMX_Z_ALUT budget 0.000000 ns (47,30) -> (47,30)
+Info:                Sink u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z.F1
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ecp5/cells_map.v:141.30-141.32
+Info:  0.2 10.2  Source u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z.OFX
+Info:  0.0 10.2    Net u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_L6MUX21_Z_D1 budget 0.000000 ns (47,30) -> (47,30)
+Info:                Sink u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_L6MUX21_Z_D1_PFUMX_Z_ALUT_LUT4_Z.FXB
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ecp5/cells_map.v:141.38-141.40
+Info:  0.2 10.5  Source u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD_L6MUX21_Z_D1_PFUMX_Z_ALUT_LUT4_Z.OFX
+Info:  3.2 13.7    Net u_buf.b_bank0_TRELLIS_FF_Q_47_DI_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_SD[0] budget 0.404000 ns (47,30) -> (69,13)
+Info:                Sink u_buf.b_bank0_TRELLIS_FF_Q_9_DI_PFUMX_Z_ALUT_LUT4_Z_C_LUT4_Z_D_PFUMX_Z_ALUT_LUT4_Z_A_L6MUX21_Z_1_D1_PFUMX_Z_ALUT_LUT4_Z.C
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ecp5/cells_map.v:108.23-108.24
+Info:  0.2 13.9  Source u_buf.b_bank0_TRELLIS_FF_Q_9_DI_PFUMX_Z_ALUT_LUT4_Z_C_LUT4_Z_D_PFUMX_Z_ALUT_LUT4_Z_A_L6MUX21_Z_1_D1_PFUMX_Z_ALUT_LUT4_Z.F
+Info:  0.0 13.9    Net u_buf.b_bank0_TRELLIS_FF_Q_9_DI_PFUMX_Z_ALUT_LUT4_Z_C_LUT4_Z_D_PFUMX_Z_ALUT_LUT4_Z_A_L6MUX21_Z_1_D1_PFUMX_Z_ALUT budget 0.404000 ns (69,13) -> (69,13)
+Info:                Sink u_buf.b_bank0_TRELLIS_FF_Q_9_DI_PFUMX_Z_ALUT_LUT4_Z_C_LUT4_Z_D_PFUMX_Z_ALUT_LUT4_Z_A_L6MUX21_Z_1_D1_PFUMX_Z_BLUT_LUT4_Z.F1
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ecp5/cells_map.v:141.30-141.32
+Info:  0.2 14.1  Source u_buf.b_bank0_TRELLIS_FF_Q_9_DI_PFUMX_Z_ALUT_LUT4_Z_C_LUT4_Z_D_PFUMX_Z_ALUT_LUT4_Z_A_L6MUX21_Z_1_D1_PFUMX_Z_BLUT_LUT4_Z.OFX
+Info:  0.0 14.1    Net u_buf.b_bank0_TRELLIS_FF_Q_9_DI_PFUMX_Z_ALUT_LUT4_Z_C_LUT4_Z_D_PFUMX_Z_ALUT_LUT4_Z_A_L6MUX21_Z_1_D1 budget 0.000000 ns (69,13) -> (69,13)
+Info:                Sink u_buf.b_bank0_TRELLIS_FF_Q_9_DI_PFUMX_Z_ALUT_LUT4_Z_C_LUT4_Z_D_PFUMX_Z_ALUT_LUT4_Z_A_L6MUX21_Z_1_D1_PFUMX_Z_ALUT_LUT4_Z.FXB
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ecp5/cells_map.v:141.38-141.40
+Info:  0.2 14.3  Source u_buf.b_bank0_TRELLIS_FF_Q_9_DI_PFUMX_Z_ALUT_LUT4_Z_C_LUT4_Z_D_PFUMX_Z_ALUT_LUT4_Z_A_L6MUX21_Z_1_D1_PFUMX_Z_ALUT_LUT4_Z.OFX
+Info:  1.8 16.2    Net u_buf.b_bank0_TRELLIS_FF_Q_9_DI_PFUMX_Z_ALUT_LUT4_Z_C_LUT4_Z_D_PFUMX_Z_ALUT_LUT4_Z_A[0] budget 0.538000 ns (69,13) -> (59,21)
+Info:                Sink u_buf.a_bank0_TRELLIS_FF_Q_89_DI_LUT4_Z_D_L6MUX21_Z_D1_PFUMX_Z_ALUT_LUT4_Z_A_LUT4_Z.C
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ecp5/cells_map.v:108.23-108.24
+Info:  0.2 16.4  Source u_buf.a_bank0_TRELLIS_FF_Q_89_DI_LUT4_Z_D_L6MUX21_Z_D1_PFUMX_Z_ALUT_LUT4_Z_A_LUT4_Z.F
+Info:  1.6 18.1    Net u_buf.a_bank0_TRELLIS_FF_Q_89_DI_LUT4_Z_D_L6MUX21_Z_D1_PFUMX_Z_ALUT_LUT4_Z_A[3] budget 0.538000 ns (59,21) -> (57,36)
+Info:                Sink u_buf.a_bank0_TRELLIS_FF_Q_89_DI_LUT4_Z_D_L6MUX21_Z_D1_PFUMX_Z_ALUT_LUT4_Z_A_LUT4_D.D
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ecp5/cells_map.v:108.23-108.24
+Info:  0.2 18.3  Source u_buf.a_bank0_TRELLIS_FF_Q_89_DI_LUT4_Z_D_L6MUX21_Z_D1_PFUMX_Z_ALUT_LUT4_Z_A_LUT4_D.F
+Info:  0.0 18.3    Net u_buf.a_bank0_TRELLIS_FF_Q_89_DI_LUT4_Z_D_L6MUX21_Z_D1_PFUMX_Z_ALUT_LUT4_Z_A_LUT4_D_Z budget 0.538000 ns (57,36) -> (57,36)
+Info:                Sink u_buf.a_bank0_TRELLIS_FF_Q_89_DI_LUT4_Z_D_L6MUX21_Z_D1_PFUMX_Z_ALUT_LUT4_Z_A_LUT4_D_Z_PFUMX_ALUT_BLUT_LUT4_Z.F1
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ecp5/cells_map.v:141.30-141.32
+Info:  0.2 18.5  Source u_buf.a_bank0_TRELLIS_FF_Q_89_DI_LUT4_Z_D_L6MUX21_Z_D1_PFUMX_Z_ALUT_LUT4_Z_A_LUT4_D_Z_PFUMX_ALUT_BLUT_LUT4_Z.OFX
+Info:  0.0 18.5    Net u_buf.a_bank0_TRELLIS_FF_Q_89_DI_LUT4_Z_D_L6MUX21_Z_D1_PFUMX_Z_ALUT_LUT4_Z_A_LUT4_D_Z_PFUMX_ALUT_Z budget 0.000000 ns (57,36) -> (57,36)
+Info:                Sink u_buf.a_bank0_TRELLIS_FF_Q_89_DI_LUT4_Z_D_L6MUX21_Z_D1_PFUMX_Z_ALUT_LUT4_Z_A_LUT4_D.FXB
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ecp5/cells_map.v:141.38-141.40
+Info:  0.2 18.7  Source u_buf.a_bank0_TRELLIS_FF_Q_89_DI_LUT4_Z_D_L6MUX21_Z_D1_PFUMX_Z_ALUT_LUT4_Z_A_LUT4_D.OFX
+Info:  1.2 19.9    Net u_buf.a_bank0_TRELLIS_FF_Q_89_DI_LUT4_Z_D_L6MUX21_Z_D1_PFUMX_Z_ALUT_LUT4_Z_A_LUT4_D_Z_PFUMX_ALUT_Z_L6MUX21_D1_Z[0] budget 0.646000 ns (57,36) -> (58,37)
+Info:                Sink u_buf.a_bank1_TRELLIS_FF_Q_121_DI_PFUMX_Z_ALUT_LUT4_Z.A
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ecp5/cells_map.v:108.23-108.24
+Info:  0.2 20.2  Source u_buf.a_bank1_TRELLIS_FF_Q_121_DI_PFUMX_Z_ALUT_LUT4_Z.F
+Info:  0.0 20.2    Net u_buf.a_bank1_TRELLIS_FF_Q_121_DI_PFUMX_Z_ALUT budget 0.646000 ns (58,37) -> (58,37)
+Info:                Sink u_buf.a_bank1_TRELLIS_FF_Q_121_DI_PFUMX_Z_BLUT_LUT4_Z.F1
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ecp5/cells_map.v:133.22-133.24
+Info:  0.2 20.3  Source u_buf.a_bank1_TRELLIS_FF_Q_121_DI_PFUMX_Z_BLUT_LUT4_Z.OFX
+Info:  1.0 21.3    Net u_buf.a_bank1_TRELLIS_FF_Q_121_DI budget 0.646000 ns (58,37) -> (58,42)
+Info:                Sink u_buf.a_bank1_TRELLIS_FF_Q_121.M
+Info:                Defined in:
+Info:                  ../rtl/systolic_top_v2.v:77.76-82.6
+Info:                  ../rtl/matrix_buffer_pp.v:64.5-78.8
+Info:  0.0 21.3  Setup u_buf.a_bank1_TRELLIS_FF_Q_121.M
+Info: 4.1 ns logic, 17.2 ns routing
+
+Info: Critical path report for cross-domain path 'posedge $glbnet$clk$TRELLIS_IO_IN' -> '<async>':
+Info: curr total
+Info:  0.5  0.5  Source result_TRELLIS_FF_Q_339.Q
+Info:  2.0  2.5    Net result[172] budget 0.000000 ns (79,9) -> (74,16)
+Info:                Sink rd_data_PFUMX_Z_83_BLUT_LUT4_Z_D_LUT4_Z.B
+Info:                Defined in:
+Info:                  ../rtl/systolic_top_v2.v:69.26-69.32
+Info:  0.2  2.8  Source rd_data_PFUMX_Z_83_BLUT_LUT4_Z_D_LUT4_Z.F
+Info:  0.9  3.7    Net rd_data_PFUMX_Z_83_BLUT_LUT4_Z_D[2] budget 0.000000 ns (74,16) -> (70,16)
+Info:                Sink rd_data_PFUMX_Z_83_BLUT_LUT4_Z.D
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ecp5/cells_map.v:108.23-108.24
+Info:  0.4  4.1  Source rd_data_PFUMX_Z_83_BLUT_LUT4_Z.OFX
+Info:  1.8  5.8    Net rd_data[44]$TRELLIS_IO_OUT budget 0.000000 ns (70,16) -> (75,20)
+Info:                Sink g_rq[1].u_rq.rounded_CCU2C_S0$CCU2_COMB1.B
+Info:                Defined in:
+Info:                  ../rtl/systolic_top_v2.v:54.37-54.44
+Info:  0.4  6.3  Source g_rq[1].u_rq.rounded_CCU2C_S0$CCU2_COMB1.FCO
+Info:  0.0  6.3    Net g_rq[1].u_rq.rounded_CCU2C_S0_4_COUT[9] budget 0.000000 ns (75,20) -> (75,20)
+Info:                Sink g_rq[1].u_rq.rounded_CCU2C_S0_13$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/systolic_top_v2.v:106.97-110.14
+Info:                  ../rtl/requant.v:45.30-45.73
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.1  6.4  Source g_rq[1].u_rq.rounded_CCU2C_S0_13$CCU2_COMB0.FCO
+Info:  0.0  6.4    Net g_rq[1].u_rq.rounded_CCU2C_S0_13$CCU2_FCI_INT budget 0.000000 ns (75,20) -> (75,20)
+Info:                Sink g_rq[1].u_rq.rounded_CCU2C_S0_13$CCU2_COMB1.FCI
+Info:  0.0  6.4  Source g_rq[1].u_rq.rounded_CCU2C_S0_13$CCU2_COMB1.FCO
+Info:  0.0  6.4    Net g_rq[1].u_rq.rounded_CCU2C_S0_4_COUT[11] budget 0.000000 ns (75,20) -> (75,20)
+Info:                Sink g_rq[1].u_rq.rounded_CCU2C_S0_12$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/systolic_top_v2.v:106.97-110.14
+Info:                  ../rtl/requant.v:45.30-45.73
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.1  6.4  Source g_rq[1].u_rq.rounded_CCU2C_S0_12$CCU2_COMB0.FCO
+Info:  0.0  6.4    Net g_rq[1].u_rq.rounded_CCU2C_S0_12$CCU2_FCI_INT budget 0.000000 ns (75,20) -> (75,20)
+Info:                Sink g_rq[1].u_rq.rounded_CCU2C_S0_12$CCU2_COMB1.FCI
+Info:  0.0  6.4  Source g_rq[1].u_rq.rounded_CCU2C_S0_12$CCU2_COMB1.FCO
+Info:  0.0  6.4    Net g_rq[1].u_rq.rounded_CCU2C_S0_4_COUT[13] budget 0.000000 ns (75,20) -> (76,20)
+Info:                Sink g_rq[1].u_rq.rounded_CCU2C_S0_11$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/systolic_top_v2.v:106.97-110.14
+Info:                  ../rtl/requant.v:45.30-45.73
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.1  6.5  Source g_rq[1].u_rq.rounded_CCU2C_S0_11$CCU2_COMB0.FCO
+Info:  0.0  6.5    Net g_rq[1].u_rq.rounded_CCU2C_S0_11$CCU2_FCI_INT budget 0.000000 ns (76,20) -> (76,20)
+Info:                Sink g_rq[1].u_rq.rounded_CCU2C_S0_11$CCU2_COMB1.FCI
+Info:  0.0  6.5  Source g_rq[1].u_rq.rounded_CCU2C_S0_11$CCU2_COMB1.FCO
+Info:  0.0  6.5    Net g_rq[1].u_rq.rounded_CCU2C_S0_4_COUT[15] budget 0.000000 ns (76,20) -> (76,20)
+Info:                Sink g_rq[1].u_rq.rounded_CCU2C_S0_10$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/systolic_top_v2.v:106.97-110.14
+Info:                  ../rtl/requant.v:45.30-45.73
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.1  6.6  Source g_rq[1].u_rq.rounded_CCU2C_S0_10$CCU2_COMB0.FCO
+Info:  0.0  6.6    Net g_rq[1].u_rq.rounded_CCU2C_S0_10$CCU2_FCI_INT budget 0.000000 ns (76,20) -> (76,20)
+Info:                Sink g_rq[1].u_rq.rounded_CCU2C_S0_10$CCU2_COMB1.FCI
+Info:  0.0  6.6  Source g_rq[1].u_rq.rounded_CCU2C_S0_10$CCU2_COMB1.FCO
+Info:  0.0  6.6    Net g_rq[1].u_rq.rounded_CCU2C_S0_4_COUT[17] budget 0.000000 ns (76,20) -> (76,20)
+Info:                Sink g_rq[1].u_rq.rounded_CCU2C_S0_9$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/systolic_top_v2.v:106.97-110.14
+Info:                  ../rtl/requant.v:45.30-45.73
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.1  6.7  Source g_rq[1].u_rq.rounded_CCU2C_S0_9$CCU2_COMB0.FCO
+Info:  0.0  6.7    Net g_rq[1].u_rq.rounded_CCU2C_S0_9$CCU2_FCI_INT budget 0.000000 ns (76,20) -> (76,20)
+Info:                Sink g_rq[1].u_rq.rounded_CCU2C_S0_9$CCU2_COMB1.FCI
+Info:  0.0  6.7  Source g_rq[1].u_rq.rounded_CCU2C_S0_9$CCU2_COMB1.FCO
+Info:  0.0  6.7    Net g_rq[1].u_rq.rounded_CCU2C_S0_4_COUT[19] budget 0.000000 ns (76,20) -> (76,20)
+Info:                Sink g_rq[1].u_rq.rounded_CCU2C_S0_8$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/systolic_top_v2.v:106.97-110.14
+Info:                  ../rtl/requant.v:45.30-45.73
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.4  7.1  Source g_rq[1].u_rq.rounded_CCU2C_S0_8$CCU2_COMB0.F
+Info:  1.5  8.6    Net g_rq[1].u_rq.rounded[23] budget 0.431000 ns (76,20) -> (77,24)
+Info:                Sink rd_q_LUT4_Z_9_B_LUT4_Z_1_C_LUT4_Z_B_LUT4_Z_1_C_PFUMX_Z_1_ALUT_LUT4_Z_A_LUT4_Z.C
+Info:                Defined in:
+Info:                  ../rtl/systolic_top_v2.v:106.97-110.14
+Info:                  ../rtl/requant.v:41.26-41.33
+Info:  0.2  8.8  Source rd_q_LUT4_Z_9_B_LUT4_Z_1_C_LUT4_Z_B_LUT4_Z_1_C_PFUMX_Z_1_ALUT_LUT4_Z_A_LUT4_Z.F
+Info:  0.8  9.6    Net rd_q_LUT4_Z_9_B_LUT4_Z_1_C_LUT4_Z_B_LUT4_Z_1_C_PFUMX_Z_1_ALUT_LUT4_Z_A[0] budget 0.431000 ns (77,24) -> (78,24)
+Info:                Sink rd_q_LUT4_Z_9_B_LUT4_Z_1_C_LUT4_Z_B_LUT4_Z_1_C_PFUMX_Z_1_ALUT_LUT4_Z.A
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ecp5/cells_map.v:108.23-108.24
+Info:  0.2  9.9  Source rd_q_LUT4_Z_9_B_LUT4_Z_1_C_LUT4_Z_B_LUT4_Z_1_C_PFUMX_Z_1_ALUT_LUT4_Z.F
+Info:  0.0  9.9    Net rd_q_LUT4_Z_9_B_LUT4_Z_1_C_LUT4_Z_B_LUT4_Z_1_C_PFUMX_Z_1_ALUT budget 0.431000 ns (78,24) -> (78,24)
+Info:                Sink rd_q_LUT4_Z_9_B_LUT4_Z_1_C_LUT4_Z_B_LUT4_Z_1_C_PFUMX_Z_1_BLUT_LUT4_Z.F1
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ecp5/cells_map.v:133.22-133.24
+Info:  0.2 10.0  Source rd_q_LUT4_Z_9_B_LUT4_Z_1_C_LUT4_Z_B_LUT4_Z_1_C_PFUMX_Z_1_BLUT_LUT4_Z.OFX
+Info:  1.0 11.1    Net rd_q_LUT4_Z_9_B_LUT4_Z_1_C_LUT4_Z_B_LUT4_Z_1_C[2] budget 0.431000 ns (78,24) -> (76,24)
+Info:                Sink rd_q_LUT4_Z_9_B_LUT4_Z_1_C_LUT4_Z_B_LUT4_Z_1.C
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ecp5/cells_map.v:108.23-108.24
+Info:  0.2 11.3  Source rd_q_LUT4_Z_9_B_LUT4_Z_1_C_LUT4_Z_B_LUT4_Z_1.F
+Info:  0.6 11.9    Net rd_q_LUT4_Z_9_B_LUT4_Z_1_C_LUT4_Z_B[1] budget 0.431000 ns (76,24) -> (76,24)
+Info:                Sink rd_q_LUT4_Z_9_B_LUT4_Z_1_C_LUT4_Z.B
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ecp5/cells_map.v:108.23-108.24
+Info:  0.2 12.2  Source rd_q_LUT4_Z_9_B_LUT4_Z_1_C_LUT4_Z.F
+Info:  1.5 13.6    Net rd_q_LUT4_Z_9_B_LUT4_Z_1_C[2] budget 0.431000 ns (76,24) -> (79,21)
+Info:                Sink rd_q_LUT4_Z_9_B_LUT4_Z_1.C
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ecp5/cells_map.v:108.23-108.24
+Info:  0.2 13.9  Source rd_q_LUT4_Z_9_B_LUT4_Z_1.F
+Info:  1.9 15.7    Net rd_q_LUT4_Z_9_B[0] budget 0.431000 ns (79,21) -> (68,25)
+Info:                Sink rd_q_LUT4_Z_10.B
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ecp5/cells_map.v:108.23-108.24
+Info:  0.2 16.0  Source rd_q_LUT4_Z_10.F
+Info:  6.0 22.0    Net rd_q[13]$TRELLIS_IO_OUT budget 0.431000 ns (68,25) -> (0,56)
+Info:                Sink rd_q[13]$tr_io.I
+Info:                Defined in:
+Info:                  ../rtl/systolic_top_v2.v:55.37-55.41
+Info: 4.0 ns logic, 18.0 ns routing
+
+Warning: Max frequency for clock '$glbnet$clk$TRELLIS_IO_IN': 70.64 MHz (FAIL at 100.00 MHz)
+
+Info: Max delay <async>                           -> <async>                          : 27.76 ns
+Info: Max delay <async>                           -> posedge $glbnet$clk$TRELLIS_IO_IN: 21.32 ns
+Info: Max delay posedge $glbnet$clk$TRELLIS_IO_IN -> <async>                          : 22.00 ns
+
+Info: Slack histogram:
+Info:  legend: * represents 37 endpoint(s)
+Info:          + represents [1,37) endpoint(s)
+Info: [-17765, -16432) |+
+Info: [-16432, -15099) |+
+Info: [-15099, -13766) |+
+Info: [-13766, -12433) |+
+Info: [-12433, -11100) |+
+Info: [-11100,  -9767) |****+
+Info: [ -9767,  -8434) |*******+
+Info: [ -8434,  -7101) |**+
+Info: [ -7101,  -5768) |+
+Info: [ -5768,  -4435) |+
+Info: [ -4435,  -3102) |*+
+Info: [ -3102,  -1769) |****+
+Info: [ -1769,   -436) |********+
+Info: [  -436,    897) |***+
+Info: [   897,   2230) |***+
+Info: [  2230,   3563) |*****************************+
+Info: [  3563,   4896) |************************************************************ 
+Info: [  4896,   6229) |******************************************+
+Info: [  6229,   7562) |**********+
+Info: [  7562,   8895) |**********+
+1 warning, 0 errors
+
+Info: Program finished normally.

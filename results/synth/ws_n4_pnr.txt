@@ -1,0 +1,303 @@
+
+
+Info: Logic utilisation before packing:
+Info:     Total LUT4s:      1219/83640     1%
+Info:         logic LUTs:    891/83640     1%
+Info:         carry LUTs:    328/83640     0%
+Info:           RAM LUTs:      0/10455     0%
+Info:          RAMW LUTs:      0/20910     0%
+
+Info:      Total DFFs:       859/83640     1%
+
+Info: Packing IOs..
+Info: Packing constants..
+Info: Packing carries...
+Info: Packing LUTs...
+Info: Packing LUT5-7s...
+Info: Packing FFs...
+Info:     84 FFs paired with LUTs.
+Info: Generating derived timing constraints...
+Info: Promoting globals...
+Info:     promoting clock net clk$TRELLIS_IO_IN to global network
+Info: Checksum: 0x74d1d3ac
+
+Info: Annotating ports with timing budgets for target frequency 100.00 MHz
+Info: Checksum: 0x40abddda
+
+Info: Device utilisation:
+Info: 	          TRELLIS_IO:   197/  365    53%
+Info: 	                DCCA:     1/   56     1%
+Info: 	              DP16KD:     0/  208     0%
+Info: 	          MULT18X18D:    16/  156    10%
+Info: 	              ALU54B:     0/   78     0%
+Info: 	             EHXPLLL:     0/    4     0%
+Info: 	             EXTREFB:     0/    2     0%
+Info: 	                DCUA:     0/    2     0%
+Info: 	           PCSCLKDIV:     0/    2     0%
+Info: 	             IOLOGIC:     0/  224     0%
+Info: 	            SIOLOGIC:     0/  141     0%
+Info: 	                 GSR:     0/    1     0%
+Info: 	               JTAGG:     0/    1     0%
+Info: 	                OSCG:     0/    1     0%
+Info: 	               SEDGA:     0/    1     0%
+Info: 	                 DTR:     0/    1     0%
+Info: 	             USRMCLK:     0/    1     0%
+Info: 	             CLKDIVF:     0/    4     0%
+Info: 	           ECLKSYNCB:     0/   10     0%
+Info: 	             DLLDELD:     0/    8     0%
+Info: 	              DDRDLL:     0/    4     0%
+Info: 	             DQSBUFM:     0/   14     0%
+Info: 	     TRELLIS_ECLKBUF:     0/    8     0%
+Info: 	        ECLKBRIDGECS:     0/    2     0%
+Info: 	                DCSC:     0/    2     0%
+Info: 	          TRELLIS_FF:   859/83640     1%
+Info: 	        TRELLIS_COMB:  1269/83640     1%
+Info: 	        TRELLIS_RAMW:     0/10455     0%
+
+Info: Placed 0 cells based on constraints.
+Info: Creating initial analytic placement for 1696 cells, random placement wirelen = 174217.
+Info:     at initial placer iter 0, wirelen = 17696
+Info:     at initial placer iter 1, wirelen = 17054
+Info:     at initial placer iter 2, wirelen = 16909
+Info:     at initial placer iter 3, wirelen = 16848
+Info: Running main analytical placer, max placement attempts per cell = 685620.
+Info:     at iteration #1, type ALL: wirelen solved = 16869, spread = 27367, legal = 38134; time = 0.10s
+Info:     at iteration #2, type ALL: wirelen solved = 17135, spread = 26042, legal = 35604; time = 0.09s
+Info:     at iteration #3, type ALL: wirelen solved = 17236, spread = 34478, legal = 42619; time = 0.09s
+Info:     at iteration #4, type ALL: wirelen solved = 17463, spread = 33701, legal = 42065; time = 0.08s
+Info:     at iteration #5, type ALL: wirelen solved = 17694, spread = 32866, legal = 40070; time = 0.08s
+Info:     at iteration #6, type ALL: wirelen solved = 18037, spread = 30688, legal = 38933; time = 0.09s
+Info:     at iteration #7, type ALL: wirelen solved = 18032, spread = 30542, legal = 38813; time = 0.08s
+Info: HeAP Placer Time: 0.78s
+Info:   of which solving equations: 0.16s
+Info:   of which spreading cells: 0.03s
+Info:   of which strict legalisation: 0.47s
+
+Info: Running simulated annealing placer for refinement.
+Info:   at iteration #1: temp = 0.000000, timing cost = 754, wirelen = 35604
+Info:   at iteration #5: temp = 0.000000, timing cost = 746, wirelen = 25531
+Info:   at iteration #10: temp = 0.000000, timing cost = 537, wirelen = 24397
+Info:   at iteration #15: temp = 0.000000, timing cost = 602, wirelen = 23904
+Info:   at iteration #20: temp = 0.000000, timing cost = 670, wirelen = 23611
+Info:   at iteration #25: temp = 0.000000, timing cost = 651, wirelen = 23574
+Info:   at iteration #25: temp = 0.000000, timing cost = 650, wirelen = 23575 
+Info: SA placement time 1.37s
+
+Info: Max frequency for clock '$glbnet$clk$TRELLIS_IO_IN': 61.58 MHz (FAIL at 100.00 MHz)
+
+Info: Max delay <async>                           -> posedge $glbnet$clk$TRELLIS_IO_IN: 24.32 ns
+Info: Max delay posedge $glbnet$clk$TRELLIS_IO_IN -> <async>                          : 13.85 ns
+
+Info: Slack histogram:
+Info:  legend: * represents 5 endpoint(s)
+Info:          + represents [1,5) endpoint(s)
+Info: [-14323, -13163) |**+
+Info: [-13163, -12003) |** 
+Info: [-12003, -10843) |+
+Info: [-10843,  -9683) |*+
+Info: [ -9683,  -8523) |*+
+Info: [ -8523,  -7363) |**** 
+Info: [ -7363,  -6203) |*******+
+Info: [ -6203,  -5043) |******************************+
+Info: [ -5043,  -3883) |*********************************************************+
+Info: [ -3883,  -2723) |************************************************************ 
+Info: [ -2723,  -1563) |************************************************+
+Info: [ -1563,   -403) |***************************+
+Info: [  -403,    757) |*************+
+Info: [   757,   1917) |*******+
+Info: [  1917,   3077) |********** 
+Info: [  3077,   4237) |**********+
+Info: [  4237,   5397) |***************+
+Info: [  5397,   6557) |******************** 
+Info: [  6557,   7717) |************************+
+Info: [  7717,   8877) |****************+
+Info: Checksum: 0x5322ba31
+Info: Routing globals...
+Info:     routing clock net $glbnet$clk$TRELLIS_IO_IN using global 0
+
+Info: Routing..
+Info: Setting up routing queue.
+Info: Routing 4563 arcs.
+Info:            |   (re-)routed arcs  |   delta    | remaining|       time spent     |
+Info:    IterCnt |  w/ripup   wo/ripup |  w/r  wo/r |      arcs| batch(sec) total(sec)|
+Info:       1000 |      849        150 |  849   150 |      4449|       0.20       0.20|
+Info:       2000 |     1658        341 |  809   191 |      4370|       0.16       0.36|
+Info:       3000 |     2111        888 |  453   547 |      4082|       0.20       0.56|
+Info:       4000 |     2540       1459 |  429   571 |      3855|       0.24       0.80|
+Info:       5000 |     2768       2231 |  228   772 |      3160|       0.21       1.01|
+Info:       6000 |     2844       2993 |   76   762 |      2246|       0.26       1.28|
+Info:       7000 |     2863       3964 |   19   971 |      1289|       0.17       1.45|
+Info:       8000 |     2878       4938 |   15   974 |       314|       0.16       1.62|
+Info:       8340 |     2895       5257 |   17   319 |         0|       0.07       1.69|
+Info: Routing complete.
+Info: Router1 time 1.69s
+Info: Checksum: 0x4eb59c0a
+
+Info: Critical path report for clock '$glbnet$clk$TRELLIS_IO_IN' (posedge -> posedge):
+Info: curr total
+Info:  0.5  0.5  Source u_array.g_row[1].g_col[2].u_pe.a_out_TRELLIS_FF_Q_7.Q
+Info:  2.1  2.7    Net u_array.a_link[8][0] budget 1.387000 ns (58,40) -> (58,58)
+Info:                Sink u_array.g_row[1].g_col[3].u_pe.product_MULT18X18D_P0.A0
+Info:                Defined in:
+Info:                  ../rtl/ws/ws_top.v:48.64-50.61
+Info:                  ../rtl/ws/pe_ws.v:37.37-37.41
+Info:                  ../rtl/ws/systolic_array_ws.v:48.57-53.18
+Info:  3.9  6.6  Source u_array.g_row[1].g_col[3].u_pe.product_MULT18X18D_P0.P2
+Info:  2.9  9.5    Net u_array.g_row[1].g_col[3].u_pe.product[2] budget 1.387000 ns (58,58) -> (53,39)
+Info:                Sink u_array.g_row[0].g_col[3].u_pe.p_out_CCU2C_A0_3$CCU2_COMB0.B
+Info:                Defined in:
+Info:                  ../rtl/ws/ws_top.v:48.64-50.61
+Info:                  ../rtl/ws/pe_ws.v:44.32-44.43
+Info:                  ../rtl/ws/systolic_array_ws.v:48.57-53.18
+Info:  0.4 10.0  Source u_array.g_row[0].g_col[3].u_pe.p_out_CCU2C_A0_3$CCU2_COMB0.FCO
+Info:  0.0 10.0    Net u_array.g_row[0].g_col[3].u_pe.p_out_CCU2C_A0_3$CCU2_FCI_INT budget 0.000000 ns (53,39) -> (53,39)
+Info:                Sink u_array.g_row[0].g_col[3].u_pe.p_out_CCU2C_A0_3$CCU2_COMB1.FCI
+Info:  0.0 10.0  Source u_array.g_row[0].g_col[3].u_pe.p_out_CCU2C_A0_3$CCU2_COMB1.FCO
+Info:  0.0 10.0    Net u_array.g_row[0].g_col[3].u_pe.p_out_CCU2C_A0_4_COUT[2] budget 0.000000 ns (53,39) -> (53,39)
+Info:                Sink u_array.g_row[0].g_col[3].u_pe.p_out_CCU2C_A0_2$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/ws/ws_top.v:48.64-50.61
+Info:                  ../rtl/ws/pe_ws.v:57.22-57.40
+Info:                  ../rtl/ws/systolic_array_ws.v:48.57-53.18
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.1 10.0  Source u_array.g_row[0].g_col[3].u_pe.p_out_CCU2C_A0_2$CCU2_COMB0.FCO
+Info:  0.0 10.0    Net u_array.g_row[0].g_col[3].u_pe.p_out_CCU2C_A0_2$CCU2_FCI_INT budget 0.000000 ns (53,39) -> (53,39)
+Info:                Sink u_array.g_row[0].g_col[3].u_pe.p_out_CCU2C_A0_2$CCU2_COMB1.FCI
+Info:  0.0 10.0  Source u_array.g_row[0].g_col[3].u_pe.p_out_CCU2C_A0_2$CCU2_COMB1.FCO
+Info:  0.0 10.0    Net u_array.g_row[0].g_col[3].u_pe.p_out_CCU2C_A0_4_COUT[4] budget 0.000000 ns (53,39) -> (54,39)
+Info:                Sink u_array.g_row[0].g_col[3].u_pe.p_out_CCU2C_A0_1$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/ws/ws_top.v:48.64-50.61
+Info:                  ../rtl/ws/pe_ws.v:57.22-57.40
+Info:                  ../rtl/ws/systolic_array_ws.v:48.57-53.18
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.1 10.1  Source u_array.g_row[0].g_col[3].u_pe.p_out_CCU2C_A0_1$CCU2_COMB0.FCO
+Info:  0.0 10.1    Net u_array.g_row[0].g_col[3].u_pe.p_out_CCU2C_A0_1$CCU2_FCI_INT budget 0.000000 ns (54,39) -> (54,39)
+Info:                Sink u_array.g_row[0].g_col[3].u_pe.p_out_CCU2C_A0_1$CCU2_COMB1.FCI
+Info:  0.0 10.1  Source u_array.g_row[0].g_col[3].u_pe.p_out_CCU2C_A0_1$CCU2_COMB1.FCO
+Info:  0.0 10.1    Net u_array.g_row[0].g_col[3].u_pe.p_out_CCU2C_A0_4_COUT[6] budget 0.000000 ns (54,39) -> (54,39)
+Info:                Sink u_array.g_row[0].g_col[3].u_pe.p_out_CCU2C_A0$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/ws/ws_top.v:48.64-50.61
+Info:                  ../rtl/ws/pe_ws.v:57.22-57.40
+Info:                  ../rtl/ws/systolic_array_ws.v:48.57-53.18
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.1 10.2  Source u_array.g_row[0].g_col[3].u_pe.p_out_CCU2C_A0$CCU2_COMB0.FCO
+Info:  0.0 10.2    Net u_array.g_row[0].g_col[3].u_pe.p_out_CCU2C_A0$CCU2_FCI_INT budget 0.000000 ns (54,39) -> (54,39)
+Info:                Sink u_array.g_row[0].g_col[3].u_pe.p_out_CCU2C_A0$CCU2_COMB1.FCI
+Info:  0.0 10.2  Source u_array.g_row[0].g_col[3].u_pe.p_out_CCU2C_A0$CCU2_COMB1.FCO
+Info:  0.0 10.2    Net u_array.g_row[0].g_col[3].u_pe.p_out_CCU2C_A0_4_COUT[8] budget 0.000000 ns (54,39) -> (54,39)
+Info:                Sink u_array.g_row[0].g_col[3].u_pe.p_out_CCU2C_A0_7$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/ws/ws_top.v:48.64-50.61
+Info:                  ../rtl/ws/pe_ws.v:57.22-57.40
+Info:                  ../rtl/ws/systolic_array_ws.v:48.57-53.18
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.1 10.3  Source u_array.g_row[0].g_col[3].u_pe.p_out_CCU2C_A0_7$CCU2_COMB0.FCO
+Info:  0.0 10.3    Net u_array.g_row[0].g_col[3].u_pe.p_out_CCU2C_A0_7$CCU2_FCI_INT budget 0.000000 ns (54,39) -> (54,39)
+Info:                Sink u_array.g_row[0].g_col[3].u_pe.p_out_CCU2C_A0_7$CCU2_COMB1.FCI
+Info:  0.0 10.3  Source u_array.g_row[0].g_col[3].u_pe.p_out_CCU2C_A0_7$CCU2_COMB1.FCO
+Info:  0.0 10.3    Net u_array.g_row[0].g_col[3].u_pe.p_out_CCU2C_A0_4_COUT[10] budget 0.000000 ns (54,39) -> (54,39)
+Info:                Sink u_array.g_row[0].g_col[3].u_pe.p_out_CCU2C_A0_6$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/ws/ws_top.v:48.64-50.61
+Info:                  ../rtl/ws/pe_ws.v:57.22-57.40
+Info:                  ../rtl/ws/systolic_array_ws.v:48.57-53.18
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.1 10.3  Source u_array.g_row[0].g_col[3].u_pe.p_out_CCU2C_A0_6$CCU2_COMB0.FCO
+Info:  0.0 10.3    Net u_array.g_row[0].g_col[3].u_pe.p_out_CCU2C_A0_6$CCU2_FCI_INT budget 0.000000 ns (54,39) -> (54,39)
+Info:                Sink u_array.g_row[0].g_col[3].u_pe.p_out_CCU2C_A0_6$CCU2_COMB1.FCI
+Info:  0.0 10.3  Source u_array.g_row[0].g_col[3].u_pe.p_out_CCU2C_A0_6$CCU2_COMB1.FCO
+Info:  0.0 10.3    Net u_array.g_row[0].g_col[3].u_pe.p_out_CCU2C_A0_4_COUT[12] budget 0.000000 ns (54,39) -> (55,39)
+Info:                Sink u_array.g_row[0].g_col[3].u_pe.p_out_CCU2C_A0_5$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/ws/ws_top.v:48.64-50.61
+Info:                  ../rtl/ws/pe_ws.v:57.22-57.40
+Info:                  ../rtl/ws/systolic_array_ws.v:48.57-53.18
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.1 10.4  Source u_array.g_row[0].g_col[3].u_pe.p_out_CCU2C_A0_5$CCU2_COMB0.FCO
+Info:  0.0 10.4    Net u_array.g_row[0].g_col[3].u_pe.p_out_CCU2C_A0_5$CCU2_FCI_INT budget 0.000000 ns (55,39) -> (55,39)
+Info:                Sink u_array.g_row[0].g_col[3].u_pe.p_out_CCU2C_A0_5$CCU2_COMB1.FCI
+Info:  0.0 10.4  Source u_array.g_row[0].g_col[3].u_pe.p_out_CCU2C_A0_5$CCU2_COMB1.FCO
+Info:  0.0 10.4    Net u_array.g_row[0].g_col[3].u_pe.p_out_CCU2C_A0_4_COUT[14] budget 0.000000 ns (55,39) -> (55,39)
+Info:                Sink u_array.g_row[0].g_col[3].u_pe.p_out_CCU2C_A0_4$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/ws/ws_top.v:48.64-50.61
+Info:                  ../rtl/ws/pe_ws.v:57.22-57.40
+Info:                  ../rtl/ws/systolic_array_ws.v:48.57-53.18
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.4 10.8  Source u_array.g_row[0].g_col[3].u_pe.p_out_CCU2C_A0_4$CCU2_COMB0.F
+Info:  1.2 12.1    Net u_array.g_row[1].g_col[3].u_pe.p_out_TRELLIS_FF_Q_DI[16] budget 1.387000 ns (55,39) -> (61,39)
+Info:                Sink u_array.g_row[1].g_col[3].u_pe.p_out_TRELLIS_FF_Q.M
+Info:                Defined in:
+Info:                  ../rtl/ws/ws_top.v:48.64-50.61
+Info:                  ../rtl/ws/pe_ws.v:57.22-57.40
+Info:                  ../rtl/ws/systolic_array_ws.v:48.57-53.18
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:34.26-34.27
+Info:  0.0 12.1  Setup u_array.g_row[1].g_col[3].u_pe.p_out_TRELLIS_FF_Q.M
+Info: 5.8 ns logic, 6.3 ns routing
+
+Info: Critical path report for cross-domain path '<async>' -> 'posedge $glbnet$clk$TRELLIS_IO_IN':
+Info: curr total
+Info:  0.0  0.0  Source a_valid$tr_io.O
+Info:  5.7  5.7    Net a_valid$TRELLIS_IO_IN budget 1.946000 ns (0,71) -> (63,33)
+Info:                Sink u_skew.din_LUT4_Z_31.D
+Info:                Defined in:
+Info:                  ../rtl/ws/ws_top.v:33.33-33.40
+Info:  0.2  5.9  Source u_skew.din_LUT4_Z_31.F
+Info:  1.8  7.8    Net a_in[0] budget 1.946000 ns (63,33) -> (45,34)
+Info:                Sink u_array.g_row[0].g_col[0].u_pe.product_MULT18X18D_P0.A0
+Info:                Defined in:
+Info:                  ../rtl/ws/ws_top.v:45.42-46.86
+Info:                  ../rtl/input_skew.v:30.33-30.37
+Info:  3.9 11.7  Source u_array.g_row[0].g_col[0].u_pe.product_MULT18X18D_P0.P1
+Info:  1.7 13.4    Net u_array.g_row[0].g_col[0].u_pe.product[1] budget 1.945000 ns (45,34) -> (49,30)
+Info:                Sink u_array.g_row[0].g_col[0].u_pe.p_out_TRELLIS_FF_Q_14.M
+Info:                Defined in:
+Info:                  ../rtl/ws/ws_top.v:48.64-50.61
+Info:                  ../rtl/ws/pe_ws.v:44.32-44.43
+Info:                  ../rtl/ws/systolic_array_ws.v:48.57-53.18
+Info:  0.0 13.4  Setup u_array.g_row[0].g_col[0].u_pe.p_out_TRELLIS_FF_Q_14.M
+Info: 4.2 ns logic, 9.2 ns routing
+
+Info: Critical path report for cross-domain path 'posedge $glbnet$clk$TRELLIS_IO_IN' -> '<async>':
+Info: curr total
+Info:  0.5  0.5  Source u_array.g_row[3].g_col[3].u_pe.p_out_TRELLIS_FF_Q_29.Q
+Info:  6.1  6.6    Net c_row[98]$TRELLIS_IO_OUT budget 9.475000 ns (57,44) -> (103,95)
+Info:                Sink c_row[98]$tr_io.I
+Info:                Defined in:
+Info:                  ../rtl/ws/ws_top.v:62.41-63.96
+Info:                  ../rtl/input_skew.v:30.33-30.37
+Info: 0.5 ns logic, 6.1 ns routing
+
+Warning: Max frequency for clock '$glbnet$clk$TRELLIS_IO_IN': 82.92 MHz (FAIL at 100.00 MHz)
+
+Info: Max delay <async>                           -> posedge $glbnet$clk$TRELLIS_IO_IN: 13.35 ns
+Info: Max delay posedge $glbnet$clk$TRELLIS_IO_IN -> <async>                          : 6.62 ns
+
+Info: Slack histogram:
+Info:  legend: * represents 4 endpoint(s)
+Info:          + represents [1,4) endpoint(s)
+Info: [ -3352,  -2735) |***+
+Info: [ -2735,  -2118) |+
+Info: [ -2118,  -1501) |************+
+Info: [ -1501,   -884) |************************+
+Info: [  -884,   -267) |******************+
+Info: [  -267,    350) |**********+
+Info: [   350,    967) |*********+
+Info: [   967,   1584) |**********+
+Info: [  1584,   2201) |*************+
+Info: [  2201,   2818) |********************************+
+Info: [  2818,   3435) |*********************************************+
+Info: [  3435,   4052) |************************************************************ 
+Info: [  4052,   4669) |**************************************+
+Info: [  4669,   5286) |*********************+
+Info: [  5286,   5903) |***************+
+Info: [  5903,   6520) |************+
+Info: [  6520,   7137) |******************+
+Info: [  7137,   7754) |*****************************+
+Info: [  7754,   8371) |*************************************+
+Info: [  8371,   8988) |*********************+
+1 warning, 0 errors
+
+Info: Program finished normally.

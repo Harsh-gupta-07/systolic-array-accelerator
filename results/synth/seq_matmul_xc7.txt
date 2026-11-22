@@ -1,0 +1,27 @@
+
+18. Printing statistics.
+
+=== seq_matmul ===
+
+   Number of wires:                 95
+   Number of wire bits:            516
+   Number of public wires:          24
+   Number of public wire bits:     203
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                237
+     BUFG                            1
+     CARRY4                          8
+     DSP48E1                         1
+     FDCE                           40
+     IBUF                           21
+     INV                            40
+     LUT2                           41
+     LUT3                           35
+     LUT4                            1
+     LUT5                            3
+     LUT6                            2
+     OBUF                           34
+     RAM32M                         10
+

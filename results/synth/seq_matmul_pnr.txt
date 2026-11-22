@@ -1,0 +1,367 @@
+
+
+Info: Logic utilisation before packing:
+Info:     Total LUT4s:       197/83640     0%
+Info:         logic LUTs:     93/83640     0%
+Info:         carry LUTs:     32/83640     0%
+Info:           RAM LUTs:     48/10455     0%
+Info:          RAMW LUTs:     24/20910     0%
+
+Info:      Total DFFs:        40/83640     0%
+
+Info: Packing IOs..
+Info: Packing constants..
+Info: Packing carries...
+Info: Packing LUTs...
+Info: Packing LUT5-7s...
+Info: Packing FFs...
+Info:     40 FFs paired with LUTs.
+Info: Generating derived timing constraints...
+Info: Promoting globals...
+Info:     promoting clock net clk$TRELLIS_IO_IN to global network
+Info: Checksum: 0xaf2802f6
+
+Info: Annotating ports with timing budgets for target frequency 100.00 MHz
+Info: Checksum: 0xeef54b82
+
+Info: Device utilisation:
+Info: 	          TRELLIS_IO:    55/  365    15%
+Info: 	                DCCA:     1/   56     1%
+Info: 	              DP16KD:     0/  208     0%
+Info: 	          MULT18X18D:     1/  156     0%
+Info: 	              ALU54B:     0/   78     0%
+Info: 	             EHXPLLL:     0/    4     0%
+Info: 	             EXTREFB:     0/    2     0%
+Info: 	                DCUA:     0/    2     0%
+Info: 	           PCSCLKDIV:     0/    2     0%
+Info: 	             IOLOGIC:     0/  224     0%
+Info: 	            SIOLOGIC:     0/  141     0%
+Info: 	                 GSR:     0/    1     0%
+Info: 	               JTAGG:     0/    1     0%
+Info: 	                OSCG:     0/    1     0%
+Info: 	               SEDGA:     0/    1     0%
+Info: 	                 DTR:     0/    1     0%
+Info: 	             USRMCLK:     0/    1     0%
+Info: 	             CLKDIVF:     0/    4     0%
+Info: 	           ECLKSYNCB:     0/   10     0%
+Info: 	             DLLDELD:     0/    8     0%
+Info: 	              DDRDLL:     0/    4     0%
+Info: 	             DQSBUFM:     0/   14     0%
+Info: 	     TRELLIS_ECLKBUF:     0/    8     0%
+Info: 	        ECLKBRIDGECS:     0/    2     0%
+Info: 	                DCSC:     0/    2     0%
+Info: 	          TRELLIS_FF:    40/83640     0%
+Info: 	        TRELLIS_COMB:   203/83640     0%
+Info: 	        TRELLIS_RAMW:    12/10455     0%
+
+Info: Placed 0 cells based on constraints.
+Info: Creating initial analytic placement for 109 cells, random placement wirelen = 21421.
+Info:     at initial placer iter 0, wirelen = 5337
+Info:     at initial placer iter 1, wirelen = 4786
+Info:     at initial placer iter 2, wirelen = 4674
+Info:     at initial placer iter 3, wirelen = 4643
+Info: Running main analytical placer, max placement attempts per cell = 12168.
+Info:     at iteration #1, type ALL: wirelen solved = 4651, spread = 5065, legal = 5308; time = 0.01s
+Info: HeAP Placer Time: 0.08s
+Info:   of which solving equations: 0.01s
+Info:   of which spreading cells: 0.00s
+Info:   of which strict legalisation: 0.00s
+
+Info: Running simulated annealing placer for refinement.
+Info:   at iteration #1: temp = 0.000000, timing cost = 241, wirelen = 5308
+Info:   at iteration #5: temp = 0.000000, timing cost = 143, wirelen = 4016
+Info:   at iteration #10: temp = 0.000000, timing cost = 140, wirelen = 3955
+Info:   at iteration #14: temp = 0.000000, timing cost = 133, wirelen = 3937 
+Info: SA placement time 0.11s
+
+Info: Max frequency for clock '$glbnet$clk$TRELLIS_IO_IN': 75.33 MHz (FAIL at 100.00 MHz)
+
+Info: Max delay <async>                           -> <async>                          : 24.60 ns
+Info: Max delay <async>                           -> posedge $glbnet$clk$TRELLIS_IO_IN: 13.59 ns
+Info: Max delay posedge $glbnet$clk$TRELLIS_IO_IN -> <async>                          : 9.28 ns
+
+Info: Slack histogram:
+Info:  legend: * represents 1 endpoint(s)
+Info:          + represents [1,1) endpoint(s)
+Info: [-14596, -13434) |+
+Info: [-13434, -12272) |+
+Info: [-12272, -11110) |+
+Info: [-11110,  -9948) |+
+Info: [ -9948,  -8786) |*+
+Info: [ -8786,  -7624) |******+
+Info: [ -7624,  -6462) |*+
+Info: [ -6462,  -5300) |**+
+Info: [ -5300,  -4138) |**+
+Info: [ -4138,  -2976) |**************+
+Info: [ -2976,  -1814) |***********************+
+Info: [ -1814,   -652) |*****************+
+Info: [  -652,    510) |*************************+
+Info: [   510,   1672) |**************+
+Info: [  1672,   2834) |***********+
+Info: [  2834,   3996) |***********+
+Info: [  3996,   5158) |***+
+Info: [  5158,   6320) |***************************+
+Info: [  6320,   7482) |***************************+
+Info: [  7482,   8644) |************************************************************ 
+Info: Checksum: 0xf4cf563d
+Info: Routing globals...
+Info:     routing clock net $glbnet$clk$TRELLIS_IO_IN using global 0
+
+Info: Routing..
+Info: Setting up routing queue.
+Info: Routing 977 arcs.
+Info:            |   (re-)routed arcs  |   delta    | remaining|       time spent     |
+Info:    IterCnt |  w/ripup   wo/ripup |  w/r  wo/r |      arcs| batch(sec) total(sec)|
+Info:       1000 |      211        771 |  211   771 |       235|       0.12       0.12|
+Info:       1276 |      228       1030 |   17   259 |         0|       0.10       0.22|
+Info: Routing complete.
+Info: Router1 time 0.22s
+Info: Checksum: 0x44699191
+
+Info: Critical path report for clock '$glbnet$clk$TRELLIS_IO_IN' (posedge -> posedge):
+Info: curr total
+Info:  0.5  0.5  Source i_TRELLIS_FF_Q.Q
+Info:  1.4  1.9    Net a_addr[3] budget 0.527000 ns (72,29) -> (70,31)
+Info:                Sink a_mem.0.1$DPRAM_COMB3.A
+Info:                Defined in:
+Info:                  ../rtl/seq_matmul.v:53.28-53.29
+Info:  0.2  2.1  Source a_mem.0.1$DPRAM_COMB3.F
+Info:  1.3  3.5    Net a_op[7] budget 0.527000 ns (70,31) -> (70,34)
+Info:                Sink prod_MULT18X18D_P0.A17
+Info:                Defined in:
+Info:                  ../rtl/seq_matmul.v:67.32-67.36
+Info:  3.9  7.4  Source prod_MULT18X18D_P0.P0
+Info:  1.4  8.7    Net prod[0] budget 0.527000 ns (70,34) -> (68,33)
+Info:                Sink acc_CCU2C_B0_15$CCU2_COMB0.A
+Info:                Defined in:
+Info:                  ../rtl/seq_matmul.v:70.32-70.40
+Info:  0.4  9.2  Source acc_CCU2C_B0_15$CCU2_COMB0.FCO
+Info:  0.0  9.2    Net acc_CCU2C_B0_15$CCU2_FCI_INT budget 0.000000 ns (68,33) -> (68,33)
+Info:                Sink acc_CCU2C_B0_15$CCU2_COMB1.FCI
+Info:  0.0  9.2  Source acc_CCU2C_B0_15$CCU2_COMB1.FCO
+Info:  0.0  9.2    Net acc_CCU2C_B0_3_COUT[1] budget 0.000000 ns (68,33) -> (68,33)
+Info:                Sink acc_CCU2C_B0_4$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/seq_matmul.v:71.60-71.74
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.1  9.3  Source acc_CCU2C_B0_4$CCU2_COMB0.FCO
+Info:  0.0  9.3    Net acc_CCU2C_B0_4$CCU2_FCI_INT budget 0.000000 ns (68,33) -> (68,33)
+Info:                Sink acc_CCU2C_B0_4$CCU2_COMB1.FCI
+Info:  0.0  9.3  Source acc_CCU2C_B0_4$CCU2_COMB1.FCO
+Info:  0.0  9.3    Net acc_CCU2C_B0_3_COUT[3] budget 0.000000 ns (68,33) -> (68,33)
+Info:                Sink acc_CCU2C_B0_2$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/seq_matmul.v:71.60-71.74
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.1  9.3  Source acc_CCU2C_B0_2$CCU2_COMB0.FCO
+Info:  0.0  9.3    Net acc_CCU2C_B0_2$CCU2_FCI_INT budget 0.000000 ns (68,33) -> (68,33)
+Info:                Sink acc_CCU2C_B0_2$CCU2_COMB1.FCI
+Info:  0.0  9.3  Source acc_CCU2C_B0_2$CCU2_COMB1.FCO
+Info:  0.0  9.3    Net acc_CCU2C_B0_3_COUT[5] budget 0.000000 ns (68,33) -> (69,33)
+Info:                Sink acc_CCU2C_B0_1$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/seq_matmul.v:71.60-71.74
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.1  9.4  Source acc_CCU2C_B0_1$CCU2_COMB0.FCO
+Info:  0.0  9.4    Net acc_CCU2C_B0_1$CCU2_FCI_INT budget 0.000000 ns (69,33) -> (69,33)
+Info:                Sink acc_CCU2C_B0_1$CCU2_COMB1.FCI
+Info:  0.0  9.4  Source acc_CCU2C_B0_1$CCU2_COMB1.FCO
+Info:  0.0  9.4    Net acc_CCU2C_B0_3_COUT[7] budget 0.000000 ns (69,33) -> (69,33)
+Info:                Sink acc_CCU2C_B0$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/seq_matmul.v:71.60-71.74
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.1  9.5  Source acc_CCU2C_B0$CCU2_COMB0.FCO
+Info:  0.0  9.5    Net acc_CCU2C_B0$CCU2_FCI_INT budget 0.000000 ns (69,33) -> (69,33)
+Info:                Sink acc_CCU2C_B0$CCU2_COMB1.FCI
+Info:  0.0  9.5  Source acc_CCU2C_B0$CCU2_COMB1.FCO
+Info:  0.0  9.5    Net acc_CCU2C_B0_3_COUT[9] budget 0.000000 ns (69,33) -> (69,33)
+Info:                Sink acc_CCU2C_B0_14$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/seq_matmul.v:71.60-71.74
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.1  9.5  Source acc_CCU2C_B0_14$CCU2_COMB0.FCO
+Info:  0.0  9.5    Net acc_CCU2C_B0_14$CCU2_FCI_INT budget 0.000000 ns (69,33) -> (69,33)
+Info:                Sink acc_CCU2C_B0_14$CCU2_COMB1.FCI
+Info:  0.0  9.5  Source acc_CCU2C_B0_14$CCU2_COMB1.FCO
+Info:  0.0  9.5    Net acc_CCU2C_B0_3_COUT[11] budget 0.000000 ns (69,33) -> (69,33)
+Info:                Sink acc_CCU2C_B0_13$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/seq_matmul.v:71.60-71.74
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.1  9.6  Source acc_CCU2C_B0_13$CCU2_COMB0.FCO
+Info:  0.0  9.6    Net acc_CCU2C_B0_13$CCU2_FCI_INT budget 0.000000 ns (69,33) -> (69,33)
+Info:                Sink acc_CCU2C_B0_13$CCU2_COMB1.FCI
+Info:  0.0  9.6  Source acc_CCU2C_B0_13$CCU2_COMB1.FCO
+Info:  0.0  9.6    Net acc_CCU2C_B0_3_COUT[13] budget 0.000000 ns (69,33) -> (70,33)
+Info:                Sink acc_CCU2C_B0_12$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/seq_matmul.v:71.60-71.74
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.1  9.7  Source acc_CCU2C_B0_12$CCU2_COMB0.FCO
+Info:  0.0  9.7    Net acc_CCU2C_B0_12$CCU2_FCI_INT budget 0.000000 ns (70,33) -> (70,33)
+Info:                Sink acc_CCU2C_B0_12$CCU2_COMB1.FCI
+Info:  0.0  9.7  Source acc_CCU2C_B0_12$CCU2_COMB1.FCO
+Info:  0.0  9.7    Net acc_CCU2C_B0_3_COUT[15] budget 0.000000 ns (70,33) -> (70,33)
+Info:                Sink acc_CCU2C_B0_11$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/seq_matmul.v:71.60-71.74
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.1  9.8  Source acc_CCU2C_B0_11$CCU2_COMB0.FCO
+Info:  0.0  9.8    Net acc_CCU2C_B0_11$CCU2_FCI_INT budget 0.000000 ns (70,33) -> (70,33)
+Info:                Sink acc_CCU2C_B0_11$CCU2_COMB1.FCI
+Info:  0.0  9.8  Source acc_CCU2C_B0_11$CCU2_COMB1.FCO
+Info:  0.0  9.8    Net acc_CCU2C_B0_3_COUT[17] budget 0.000000 ns (70,33) -> (70,33)
+Info:                Sink acc_CCU2C_B0_10$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/seq_matmul.v:71.60-71.74
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.1  9.8  Source acc_CCU2C_B0_10$CCU2_COMB0.FCO
+Info:  0.0  9.8    Net acc_CCU2C_B0_10$CCU2_FCI_INT budget 0.000000 ns (70,33) -> (70,33)
+Info:                Sink acc_CCU2C_B0_10$CCU2_COMB1.FCI
+Info:  0.0  9.8  Source acc_CCU2C_B0_10$CCU2_COMB1.FCO
+Info:  0.0  9.8    Net acc_CCU2C_B0_3_COUT[19] budget 0.000000 ns (70,33) -> (70,33)
+Info:                Sink acc_CCU2C_B0_9$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/seq_matmul.v:71.60-71.74
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.1  9.9  Source acc_CCU2C_B0_9$CCU2_COMB0.FCO
+Info:  0.0  9.9    Net acc_CCU2C_B0_9$CCU2_FCI_INT budget 0.000000 ns (70,33) -> (70,33)
+Info:                Sink acc_CCU2C_B0_9$CCU2_COMB1.FCI
+Info:  0.0  9.9  Source acc_CCU2C_B0_9$CCU2_COMB1.FCO
+Info:  0.0  9.9    Net acc_CCU2C_B0_3_COUT[21] budget 0.000000 ns (70,33) -> (71,33)
+Info:                Sink acc_CCU2C_B0_8$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/seq_matmul.v:71.60-71.74
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.1 10.0  Source acc_CCU2C_B0_8$CCU2_COMB0.FCO
+Info:  0.0 10.0    Net acc_CCU2C_B0_8$CCU2_FCI_INT budget 0.000000 ns (71,33) -> (71,33)
+Info:                Sink acc_CCU2C_B0_8$CCU2_COMB1.FCI
+Info:  0.0 10.0  Source acc_CCU2C_B0_8$CCU2_COMB1.FCO
+Info:  0.0 10.0    Net acc_CCU2C_B0_3_COUT[23] budget 0.000000 ns (71,33) -> (71,33)
+Info:                Sink acc_CCU2C_B0_7$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/seq_matmul.v:71.60-71.74
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.1 10.0  Source acc_CCU2C_B0_7$CCU2_COMB0.FCO
+Info:  0.0 10.0    Net acc_CCU2C_B0_7$CCU2_FCI_INT budget 0.000000 ns (71,33) -> (71,33)
+Info:                Sink acc_CCU2C_B0_7$CCU2_COMB1.FCI
+Info:  0.0 10.0  Source acc_CCU2C_B0_7$CCU2_COMB1.FCO
+Info:  0.0 10.0    Net acc_CCU2C_B0_3_COUT[25] budget 0.000000 ns (71,33) -> (71,33)
+Info:                Sink acc_CCU2C_B0_6$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/seq_matmul.v:71.60-71.74
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.1 10.1  Source acc_CCU2C_B0_6$CCU2_COMB0.FCO
+Info:  0.0 10.1    Net acc_CCU2C_B0_6$CCU2_FCI_INT budget 0.000000 ns (71,33) -> (71,33)
+Info:                Sink acc_CCU2C_B0_6$CCU2_COMB1.FCI
+Info:  0.0 10.1  Source acc_CCU2C_B0_6$CCU2_COMB1.FCO
+Info:  0.0 10.1    Net acc_CCU2C_B0_3_COUT[27] budget 0.000000 ns (71,33) -> (71,33)
+Info:                Sink acc_CCU2C_B0_5$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/seq_matmul.v:71.60-71.74
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.1 10.2  Source acc_CCU2C_B0_5$CCU2_COMB0.FCO
+Info:  0.0 10.2    Net acc_CCU2C_B0_5$CCU2_FCI_INT budget 0.000000 ns (71,33) -> (71,33)
+Info:                Sink acc_CCU2C_B0_5$CCU2_COMB1.FCI
+Info:  0.0 10.2  Source acc_CCU2C_B0_5$CCU2_COMB1.FCO
+Info:  0.0 10.2    Net acc_CCU2C_B0_3_COUT[29] budget 0.000000 ns (71,33) -> (72,33)
+Info:                Sink acc_CCU2C_B0_3$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  ../rtl/seq_matmul.v:71.60-71.74
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.1 10.2  Source acc_CCU2C_B0_3$CCU2_COMB0.FCO
+Info:  0.0 10.2    Net acc_CCU2C_B0_3$CCU2_FCI_INT budget 0.000000 ns (72,33) -> (72,33)
+Info:                Sink acc_CCU2C_B0_3$CCU2_COMB1.FCI
+Info:  0.4 10.7  Source acc_CCU2C_B0_3$CCU2_COMB1.F
+Info:  0.8 11.5    Net sum_LUT4_Z_B[31] budget 0.527000 ns (72,33) -> (73,33)
+Info:                Sink sum_LUT4_Z.B
+Info:                Defined in:
+Info:                  ../rtl/seq_matmul.v:71.60-71.74
+Info:                  /usr/bin/../share/yosys/ecp5/arith_map.v:34.26-34.27
+Info:  0.2 11.7  Source sum_LUT4_Z.F
+Info:  1.4 13.1    Net sum[31] budget 0.527000 ns (73,33) -> (73,30)
+Info:                Sink c_mem.0.7$RAMW_SLICE.B1
+Info:                Defined in:
+Info:                  ../rtl/seq_matmul.v:71.32-71.35
+Info:  0.0 13.1  Source c_mem.0.7$RAMW_SLICE.WDO3
+Info:  0.1 13.2    Net c_mem.0.7$RAMW_SLICE$conn$WDO3 budget 0.526000 ns (73,30) -> (73,30)
+Info:                Sink c_mem.0.7$DPRAM_COMB3.WD
+Info:  0.0 13.2  Setup c_mem.0.7$DPRAM_COMB3.WD
+Info: 6.8 ns logic, 6.4 ns routing
+
+Info: Critical path report for cross-domain path '<async>' -> '<async>':
+Info: curr total
+Info:  0.0  0.0  Source rd_addr[1]$tr_io.O
+Info:  4.2  4.2    Net rd_addr[1]$TRELLIS_IO_IN budget 4.882000 ns (126,26) -> (67,32)
+Info:                Sink c_mem.0.0$DPRAM_COMB3.B
+Info:                Defined in:
+Info:                  ../rtl/seq_matmul.v:40.37-40.44
+Info:  0.2  4.5  Source c_mem.0.0$DPRAM_COMB3.F
+Info:  6.5 11.0    Net rd_data[3]$TRELLIS_IO_OUT budget 4.882000 ns (67,32) -> (18,95)
+Info:                Sink rd_data[3]$tr_io.I
+Info:                Defined in:
+Info:                  ../rtl/seq_matmul.v:41.37-41.44
+Info: 0.2 ns logic, 10.7 ns routing
+
+Info: Critical path report for cross-domain path '<async>' -> 'posedge $glbnet$clk$TRELLIS_IO_IN':
+Info: curr total
+Info:  0.0  0.0  Source wr_en$tr_io.O
+Info:  4.5  4.5    Net wr_en$TRELLIS_IO_IN budget 4.686000 ns (0,11) -> (70,11)
+Info:                Sink wr_en_LUT4_C.C
+Info:                Defined in:
+Info:                  ../rtl/seq_matmul.v:36.37-36.42
+Info:  0.2  4.7  Source wr_en_LUT4_C.F
+Info:  2.2  6.9    Net b_mem.0.0_WRE[0] budget 4.686000 ns (70,11) -> (70,32)
+Info:                Sink b_mem.0.1$DPRAM_COMB0.WRE
+Info:                Defined in:
+Info:                  ../rtl/seq_matmul.v:57.5-60.8
+Info:  0.4  7.3  Setup b_mem.0.1$DPRAM_COMB0.WRE
+Info: 0.6 ns logic, 6.7 ns routing
+
+Info: Critical path report for cross-domain path 'posedge $glbnet$clk$TRELLIS_IO_IN' -> '<async>':
+Info: curr total
+Info:  0.5  0.5  Source state_TRELLIS_FF_Q_1.Q
+Info:  0.9  1.4    Net state[0] budget 4.620000 ns (76,31) -> (76,31)
+Info:                Sink done_LUT4_Z.C
+Info:                Defined in:
+Info:                  ../rtl/seq_matmul.v:52.28-52.33
+Info:  0.2  1.6  Source done_LUT4_Z.F
+Info:  3.7  5.3    Net done$TRELLIS_IO_OUT budget 4.619000 ns (76,31) -> (126,35)
+Info:                Sink done$tr_io.I
+Info:                Defined in:
+Info:                  ../rtl/seq_matmul.v:35.37-35.41
+Info: 0.8 ns logic, 4.5 ns routing
+
+Warning: Max frequency for clock '$glbnet$clk$TRELLIS_IO_IN': 75.69 MHz (FAIL at 100.00 MHz)
+
+Info: Max delay <async>                           -> <async>                          : 10.98 ns
+Info: Max delay <async>                           -> posedge $glbnet$clk$TRELLIS_IO_IN: 7.29 ns
+Info: Max delay posedge $glbnet$clk$TRELLIS_IO_IN -> <async>                          : 5.29 ns
+
+Info: Slack histogram:
+Info:  legend: * represents 1 endpoint(s)
+Info:          + represents [1,1) endpoint(s)
+Info: [ -3211,  -2604) |*****+
+Info: [ -2604,  -1997) |***********+
+Info: [ -1997,  -1390) |******************+
+Info: [ -1390,   -783) |***********+
+Info: [  -783,   -176) |***+
+Info: [  -176,    431) |*+
+Info: [   431,   1038) |***+
+Info: [  1038,   1645) |***+
+Info: [  1645,   2252) |******+
+Info: [  2252,   2859) |*********+
+Info: [  2859,   3466) |******+
+Info: [  3466,   4073) |***************+
+Info: [  4073,   4680) |************+
+Info: [  4680,   5287) |*********************+
+Info: [  5287,   5894) |*********+
+Info: [  5894,   6501) |*****************************************+
+Info: [  6501,   7108) |************************************************************ 
+Info: [  7108,   7715) |*******+
+Info: [  7715,   8322) |**********************************************************+
+Info: [  8322,   8929) |**********************************+
+1 warning, 0 errors
+
+Info: Program finished normally.
