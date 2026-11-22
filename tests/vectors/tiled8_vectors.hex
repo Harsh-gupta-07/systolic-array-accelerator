@@ -1,0 +1,25 @@
+// tiled 8x8: A 8x8, B 8x8, C 8x8
+00 f8 0d f6 ff 27 1b 21
+1a 10 11 e7 f4 0a db 1d
+22 1f 03 f8 23 f5 06 e9
+e7 e9 07 f1 d9 0a 09 09
+04 07 04 1c de e2 e1 13
+eb 0f 0d dd e8 01 e1 18
+07 fb e8 fc 28 1f 0a f1
+dd da 0f ec fb e8 df 06
+17 fa d9 0d 13 f2 0b 1b
+1d f3 05 f0 04 db 05 13
+24 e0 ef 16 17 18 d8 e8
+12 0d f1 ef 16 06 1d 06
+f9 ec e2 09 de e4 12 20
+f7 13 e1 e7 de ff 1b 21
+e8 28 e4 14 22 fe 11 dc
+0f fb 00 d9 09 1b ee f0
+fffffe47 000004d2 fffff802 fffffb85 ffffffe2 0000055e 00000032 fffffcff
+000009ed fffff684 000000ee fffffabc fffffdee 000001e5 fffff7a8 000004ee
+000003f2 fffffaaf fffff845 000006db ffffff64 fffff37f 00000402 000008f8
+fffffb7a 00000523 00000626 fffffec0 0000027d 00000a1a fffff9f6 fffff53c
+000009b0 fffffbb0 000008a1 fffffaab 00000839 000005e2 fffff9e8 fffffc47
+0000041d fffff8f7 00000ac3 fffffa6b fffffc9e 000004c6 fffff411 fffffcd9
+fffff868 000003eb fffff721 00000051 fffff550 fffff7d7 00000b4d 00000b0d
+fffffdae fffff932 00000bde 000001e4 fffffc1e 000009e0 fffff3a6 fffff829

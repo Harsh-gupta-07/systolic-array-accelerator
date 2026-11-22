@@ -11,3 +11,10 @@ sim/*.vcd
 # Python
 __pycache__/
 *.pyc
+# synthesis logs (large, regenerate with syn/run_all_synth.sh)
+results/synth/*.log
+results/synth/*.json
+syn/vivado/reports/
+syn/vivado/*.jou
+syn/vivado/*.log
+syn/vivado/.Xil/
