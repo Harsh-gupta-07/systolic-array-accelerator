@@ -24,8 +24,9 @@
 `timescale 1ns / 1ps
 
 module pe #(
-    parameter DATA_W = 8,
-    parameter ACC_W  = 32
+    parameter DATA_W   = 8,
+    parameter ACC_W    = 32,
+    parameter MUL_PIPE = 0     // passed to mac_unit (Phase II)
 ) (
     input  wire                     clk,
     input  wire                     rst_n,
@@ -40,8 +41,9 @@ module pe #(
 
     // ---------------- Multiply-accumulate datapath ----------------
     mac_unit #(
-        .DATA_W (DATA_W),
-        .ACC_W  (ACC_W)
+        .DATA_W   (DATA_W),
+        .ACC_W    (ACC_W),
+        .MUL_PIPE (MUL_PIPE)
     ) u_mac (
         .clk   (clk),
         .rst_n (rst_n),

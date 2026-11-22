@@ -27,9 +27,10 @@
 `timescale 1ns / 1ps
 
 module systolic_array #(
-    parameter N      = 4,
-    parameter DATA_W = 8,
-    parameter ACC_W  = 32
+    parameter N        = 4,
+    parameter DATA_W   = 8,
+    parameter ACC_W    = 32,
+    parameter MUL_PIPE = 0
 ) (
     input  wire                    clk,
     input  wire                    rst_n,
@@ -62,8 +63,9 @@ module systolic_array #(
         for (i = 0; i < N; i = i + 1) begin : g_row
             for (j = 0; j < N; j = j + 1) begin : g_col
                 pe #(
-                    .DATA_W (DATA_W),
-                    .ACC_W  (ACC_W)
+                    .DATA_W   (DATA_W),
+                    .ACC_W    (ACC_W),
+                    .MUL_PIPE (MUL_PIPE)
                 ) u_pe (
                     .clk     (clk),
                     .rst_n   (rst_n),
