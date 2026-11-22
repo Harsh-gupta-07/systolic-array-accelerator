@@ -1,0 +1,30 @@
+% res_verification.tex  -- written by Shivansh
+\section{Results and Discussion}
+
+\subsection{Functional Verification}
+Table~\ref{tab:verif} summarises the regression; every check passes. The
+v2 suite runs in all four pipeline configurations, and the scaling sweep
+covers $N=2,3,4,8,16$ against an independent behavioural reference.
+
+\begin{table}[t]
+\centering
+\caption{Verification summary (all passing)}
+\label{tab:verif}
+\setlength{\tabcolsep}{2.5pt}
+\begin{tabular}{@{}lp{4.1cm}r@{}}
+\toprule
+\textbf{Testbench} & \textbf{Scope} & \textbf{Checks}\\
+\midrule
+\texttt{tb\_mac\_unit}, \texttt{tb\_pe} & directed unit tests & 27 \\
+\texttt{tb\_systolic\_array} & skew + array, 2 products & 32 \\
+\texttt{tb\_systolic\_top} & P-I top: 8 directed + 1000 random & 16\,128 \\
+\texttt{tb\_systolic\_top} (seq) & baseline: same 1008 products & 16\,128 \\
+\texttt{tb\_requant} & rounding/saturation edges & 2\,000 \\
+\texttt{tb\_mac\_pipe} & pipelined vs.\ comb.\ MAC & 2\,000 cyc. \\
+\texttt{tb\_systolic\_top\_v2} & 208 products, serial + overlapped, 4 configs & 26\,624 \\
+\texttt{tb\_scaling} & $N$=2..16, 70 products each & 24\,430 \\
+\texttt{tb\_tiled\_gemm} & $8\times8$, $12\times12$ GEMM & 208 \\
+\texttt{tb\_ws\_top} & WS, 4 and 16 rows of $A$ & 80 \\
+\bottomrule
+\end{tabular}
+\end{table}

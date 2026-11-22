@@ -1,0 +1,29 @@
+% limitations_conclusion.tex  -- written by Shivansh
+\subsection{Limitations}
+The FPGA numbers come from an open-source flow: post-route on Lattice ECP5,
+and synthesis-level estimates for Xilinx 7-series. Vivado results for an
+Artix-7 may differ by tens of percent; the included script reproduces
+them. The sequential baseline was not pipelined, so its 75.7~MHz
+understates what a tuned single-MAC design could reach; the cycle-based
+speed-ups (5.4$\times$ compute, 9.4$\times$ end-to-end) do not depend on
+this. Finally, the OS design reloads both operands for every product,
+which limits utilisation to 1/3, as discussed above.
+
+% -----------------------------------------------------------------------------
+\section{Conclusion}
+We designed, verified and evaluated a parameterised output-stationary
+systolic-array accelerator. The Phase~I prototype showed that the array
+computes correctly with a $3N$-cycle latency. Phase~II showed that the
+array alone does not determine performance. Data transfer initially
+consumed 80\,\% of the time, and only row-wide transfers, double buffering
+and a result buffer turned the 5.4$\times$ compute advantage into a real
+end-to-end gain. Two pipeline registers then doubled the clock rate. The
+final $4\times4$ design completes a product every 14 cycles at 116~MHz
+(121~ns): 12.4$\times$ faster than a single-MAC baseline, verified by more
+than 85\,000 checks and predicted exactly by a simple analytical model.
+The weight-stationary comparison quantified why large accelerators such as
+the TPU keep weights in place: utilisation rises from 1/3 towards 1 when
+operands are reused across many rows. Natural extensions are a
+weight-stationary or hybrid controller with on-chip activation buffers, a
+DMA-style memory interface, deeper DSP-internal pipelining and running the
+design on an FPGA board.
