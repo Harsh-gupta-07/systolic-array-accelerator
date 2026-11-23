@@ -1,0 +1,20 @@
+metric,config,model,measured
+latency start->done,N=2,6,6
+cycles per product (50 back-to-back),N=2,6,6.14
+MACs per cycle,N=2,1.33,1.3
+latency start->done,N=3,9,9
+cycles per product (50 back-to-back),N=3,9,9.2
+MACs per cycle,N=3,3.0,2.93
+latency start->done,N=4,12,12
+cycles per product (50 back-to-back),N=4,12,12.26
+MACs per cycle,N=4,5.33,5.22
+latency start->done,N=8,24,24
+cycles per product (50 back-to-back),N=8,24,24.5
+MACs per cycle,N=8,21.33,20.89
+latency start->done,N=16,48,48
+cycles per product (50 back-to-back),N=16,48,48.98
+MACs per cycle,N=16,85.33,83.62
+"WS cycles, M rows of A",M=4,15,15
+"WS cycles, M rows of A",M=16,27,27
+tiled GEMM total cycles,8x8,105,105
+tiled GEMM total cycles,12x12,319,319
