@@ -58,7 +58,7 @@ tb/                      10 self-checking testbenches
 model/                   golden_model.py, numerics_analysis.py, perf_model.py,
                          plot_results.py, plot_wave_v2.py, plot_style.py
 tests/vectors/           generated $readmemh vectors (directed, random, requant, WS, tiled)
-sim/                     Makefile, run_all.sh / run_all.bat, GTKWave presets (*.gtkw)
+sim/                     Makefile, run_all.sh, GTKWave presets (*.gtkw)
 syn/                     synth_one.sh, run_all_synth.sh, collect_synth.py, vivado/
 results/                 logs, CSV tables, figures, summary.md (all regenerable)
 docs/                    figures, interview guides, commit plans, roadmap
@@ -72,7 +72,7 @@ For plots: `pip install numpy matplotlib`. For synthesis: `yosys`, `nextpnr-ecp5
 
 ```bash
 cd sim
-make all            # every functional test (or ./run_all.sh / run_all.bat without make)
+make all            # every functional test (or ./run_all.sh without make)
 ```
 
 Expected: 21 `RESULT:` lines, all passing. Individual targets:
@@ -94,7 +94,7 @@ cd syn
 ./run_all_synth.sh   # Yosys (Xilinx 7-series estimates) + nextpnr-ecp5 (post-route Fmax)
 ```
 
-Vivado (optional): `syn/vivado/run_vivado_all.bat` or `.sh` gives Artix-7 utilisation and Fmax.
+Vivado (optional): `syn/vivado/run_vivado_all.sh` gives Artix-7 utilisation and Fmax.
 
 ## References
 
