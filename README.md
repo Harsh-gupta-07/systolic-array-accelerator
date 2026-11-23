@@ -1,95 +1,101 @@
 # Systolic Array Matrix Multiplication Accelerator
 
 **CSA-222 Modern Computer Architecture: group project (Project 12)**
-A parameterised **4×4 output-stationary systolic array** for signed fixed-point (Q4.4) matrix multiplication, written in synthesizable **Verilog-2005** and verified with **Icarus Verilog** and GTKWave. No hardware board is required.
+A parameterised **N×N output-stationary systolic array** for signed fixed-point (Q4.4) matrix multiplication, written in synthesizable **Verilog-2005**. It is verified with **Icarus Verilog** against a bit-exact Python golden model, and synthesised and placed-and-routed with open-source FPGA tools. No hardware board is required.
 
 | | |
 |---|---|
-| **Phase I report** | [`report/phase1_report.pdf`](report/phase1_report.pdf) (IEEE format, LaTeX source alongside) |
-| **Prototype video** | **[Watch on Google Drive](https://drive.google.com/file/d/1_Fuetn23N6ReVL-TJW9B5vXp2K5eXfok/view?usp=sharing)** |
+| **Final report (Phase II)** | [`report/final_report.pdf`](report/final_report.pdf) (IEEE format, LaTeX source alongside) |
+| **Phase I report** | [`report/phase1_report.pdf`](report/phase1_report.pdf) |
+| **Prototype video (Phase I)** | **[Watch on Google Drive](https://drive.google.com/file/d/1_Fuetn23N6ReVL-TJW9B5vXp2K5eXfok/view?usp=sharing)** |
 | **Team** | Harshvardhan Gupta (2401010185) · Harsha Gonela (2401010181) · Abhijeet Dey (2401010014) · Saumya Kumar (2401010432) · Shivansh Upadhayay (2401020109) |
 
-![System block diagram](docs/figures/fig_system_block.png)
+![Final architecture](docs/figures/fig_system_v2.png)
 
 ---
 
-## What it does
+## Headline results (4×4 array)
 
-`C = A × B` for 4×4 matrices:
+| Design | cycles / product | Fmax (ECP5, post-route) | ns / product | speed-up vs 1 MAC |
+|---|---|---|---|---|
+| Sequential baseline (1 MAC) | 113 | 75.7 MHz | 1493 | 1.0× |
+| Phase I systolic | 60 | 55.5 MHz | 1081 | 1.4× |
+| Phase II, overlapped | 12.06 | 51.3 MHz | 235 | 6.4× |
+| **Phase II, overlapped + pipelined** | **14.06** | **116.4 MHz** | **121** | **12.4×** |
 
-1. The host writes A and B into the **input buffers**, one element per cycle.
-2. `start` → the **controller FSM** streams one column of A and one row of B per cycle.
-3. The **skew buffers** stagger them into a diagonal wavefront.
-4. Each **PE(i,j)** multiplies the operands passing through it and accumulates `C[i][j]` locally (output-stationary).
-5. `done` → each `C[i][j]` is read out through `rd_addr` / `rd_data`.
+- **Verification:** more than 85,000 element checks pass, including a 1,000-matrix random regression, all four pipeline configurations, N = 2…16, tiled 8×8 and 12×12 GEMMs, and the weight-stationary array.
+- **Analytical model** (`model/perf_model.py`): predicts every measured latency exactly. The latency is 3N cycles, and the PE utilisation is 1/3.
+- **Amdahl's law in hardware:** Phase I was only 1.4× faster than the baseline because 48 of its 60 cycles were I/O. Double buffering hides that I/O.
+- **Numerics:** RMSE vs float64 is 0.035 after requantising to Q4.4. Saturation affects 0.3% of outputs, and only for ±2-range inputs.
 
-| Parameter | Value |
+![Throughput comparison](results/figures/fig_throughput.png)
+
+## What is in Phase II
+
+| Feature | Files |
 |---|---|
-| Array size `N` | 4 (parameterised; also tested at 3) |
-| Operand format | signed Q4.4 (8 bit), range −8.0 … +7.9375 |
-| Accumulator | signed Q24.8 (32 bit), overflow-free for N = 4 |
-| Compute latency | 3N − 2 = 10 cycles (FEED + DRAIN) |
-| start → done (observed) | 12 cycles |
+| Ping-pong (double-buffered) operand buffers, row-wide host interface | `rtl/matrix_buffer_pp.v` |
+| Controller v2: back-to-back starts, accumulate mode (tiling), bank swap, result capture | `rtl/systolic_controller_v2.v` |
+| Result buffer + output requantisation Q24.8 → Q4.4 (round + saturate) | `rtl/systolic_top_v2.v`, `rtl/requant.v` |
+| Hardware performance counters | `rtl/perf_counters.v` |
+| Optional pipeline registers: `MUL_PIPE` (MAC), `BUF_REG` (buffer output) | `rtl/mac_unit.v`, `rtl/matrix_buffer_pp.v` |
+| Sequential single-MAC baseline (N³ cycles) | `rtl/seq_matmul.v` |
+| Weight-stationary streaming array (TPU-style), for comparison | `rtl/ws/` |
+| Golden model, numerics study, performance model, result plots | `model/` |
+| Yosys + nextpnr synthesis / P&R, Vivado script | `syn/` |
 
 ## Repository layout
 
 ```
-rtl/                     synthesizable RTL
-  mac_unit.v             signed Q4.4 multiply + 32-bit accumulate      (Harshvardhan Gupta)
-  pe.v                   processing element: MAC + forwarding regs      (Harsha Gonela)
-  systolic_array.v       N×N PE grid (generate loops)                   (Abhijeet Dey)
-  input_skew.v           diagonal skew buffers                          (Abhijeet Dey)
-  matrix_buffer.v        A/B input buffers + matrix data interface      (Saumya Kumar)
-  systolic_controller.v  IDLE/CLEAR/FEED/DRAIN/DONE FSM                 (Saumya Kumar)
-  systolic_top.v         top level + output read mux                    (Saumya Kumar)
-tb/                      self-checking testbenches (one per level)
-model/golden_model.py    bit-exact Python reference + vector generator  (Shivansh Upadhayay)
-tests/vectors/           generated $readmemh vectors + readable dump
+rtl/                     synthesizable RTL (Phase I modules kept unchanged in behaviour)
+  mac_unit.v pe.v systolic_array.v input_skew.v            datapath (MUL_PIPE option)
+  matrix_buffer.v systolic_controller.v systolic_top.v      Phase I top
+  matrix_buffer_pp.v systolic_controller_v2.v requant.v
+  perf_counters.v systolic_top_v2.v                         Phase II top
+  seq_matmul.v                                              sequential baseline
+  ws/pe_ws.v ws/systolic_array_ws.v ws/ws_top.v             weight-stationary design
+tb/                      10 self-checking testbenches
+model/                   golden_model.py, numerics_analysis.py, perf_model.py,
+                         plot_results.py, plot_wave_v2.py, plot_style.py
+tests/vectors/           generated $readmemh vectors (directed, random, requant, WS, tiled)
 sim/                     Makefile, run_all.sh / run_all.bat, GTKWave presets (*.gtkw)
-docs/figures/            block, PE, dataflow, FSM and waveform figures (TikZ sources in src/)
-docs/VIDEO_SCRIPT.md     Phase I video script and shot list
-docs/PHASE2_ROADMAP.md   Phase II work plan per member
-docs/COMMIT_PLAN.md      how each member commits their own work
-report/                  IEEE report (LaTeX + PDF)
+syn/                     synth_one.sh, run_all_synth.sh, collect_synth.py, vivado/
+results/                 logs, CSV tables, figures, summary.md (all regenerable)
+docs/                    figures, interview guides, commit plans, roadmap
+report/                  Phase I and final IEEE reports (LaTeX + PDF)
 ```
 
-## Running the simulations
+## How to run
 
-Requirements: Icarus Verilog (v12 or v13), Python 3, GTKWave (optional, for viewing waveforms).
+Requirements: Icarus Verilog (v12 or v13), Python 3. GTKWave is optional.
+For plots: `pip install numpy matplotlib`. For synthesis: `yosys`, `nextpnr-ecp5`, `fpga-trellis`.
 
 ```bash
 cd sim
-make all                 # or ./run_all.sh
+make all            # every functional test (or ./run_all.sh / run_all.bat without make)
 ```
 
-Expected output:
+Expected: 21 `RESULT: ... PASSED` lines. Individual targets:
 
+| Target | What it runs |
+|---|---|
+| `make mac pe array top` | Phase I unit and system tests |
+| `make requant` / `make macpipe` | requantiser, pipelined MAC |
+| `make top2` | Phase II top: serial and overlapped, 4 pipeline configs |
+| `make seq` / `make regress` | sequential baseline / 1000-test random regression |
+| `make ws` / `make tiled` / `make sweep` | weight-stationary, tiled GEMM, N = 2…16 sweep |
+| `make results` | all of the above + logs + CSV tables + figures |
+| `make wave_top2` | GTKWave with the Phase II preset |
+
+Synthesis (about 7 minutes):
+
+```bash
+cd syn
+./run_all_synth.sh   # Yosys (Xilinx 7-series estimates) + nextpnr-ecp5 (post-route Fmax)
 ```
- RESULT: ALL 10 MAC TESTS PASSED
- RESULT: ALL 17 PE TESTS PASSED
- RESULT: ARRAY TESTS PASSED
- RESULT: ALL 8 SYSTEM TESTS PASSED
-```
 
-Individual targets: `make mac`, `make pe`, `make array`, `make top`, `make vectors`.
-Waveforms: `gtkwave tb_systolic_top.vcd top.gtkw` (presets: `mac.gtkw`, `pe.gtkw`, `array.gtkw`, `top.gtkw`).
-
-## Verification summary (Phase I)
-
-| Testbench | What it checks | Result |
-|---|---|---|
-| `tb_mac_unit` | signed multiply, accumulate, hold, clear priority, Q4.4 fractions, extreme operands | 10/10 pass |
-| `tb_pe` | 1-cycle forwarding, accumulation, freeze, clear, streamed dot product | 17/17 pass |
-| `tb_systolic_array` | skew + array: A×I, signed A×B vs in-testbench reference | 2/2 pass |
-| `tb_systolic_top` | full accelerator vs Python golden model: identity, signed, fractional, extreme, zero | 8/8 pass (128 elements) |
-
-![Full-system waveform](docs/figures/fig_wave_top.png)
-
-## Project status
-
-- [x] **Phase I:** architecture, complete RTL, unit and system testbenches, golden model, IEEE report, video
-- [ ] **Phase II:** performance counters and throughput analysis, sequential baseline and speed-up, double buffering and back-to-back streaming, tiling for larger matrices, requantisation and saturation, Vivado synthesis (utilisation and Fmax), random regression. See [`docs/PHASE2_ROADMAP.md`](docs/PHASE2_ROADMAP.md).
+Vivado (optional, Windows/Linux): `syn/vivado/run_vivado_all.bat` or `.sh` gives Artix-7 utilisation and Fmax.
 
 ## References
 
-The key sources are H. T. Kung, *Why systolic architectures?* (IEEE Computer, 1982); N. Jouppi et al., *In-datacenter performance analysis of a TPU* (ISCA 2017); and V. Sze et al., *Efficient processing of DNNs* (Proc. IEEE, 2017). The report has the full reference list.
+Key sources: H. T. Kung, *Why systolic architectures?* (IEEE Computer, 1982); N. Jouppi et al., *In-datacenter performance analysis of a TPU* (ISCA 2017); V. Sze et al., *Efficient processing of DNNs* (Proc. IEEE, 2017). The full list is in the report.

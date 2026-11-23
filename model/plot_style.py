@@ -1,3 +1,4 @@
+"""Shared matplotlib style for all Phase II report figures (print, light surface)."""
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt

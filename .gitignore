@@ -1,3 +1,4 @@
+.DS_Store
 # simulation outputs (regenerate with sim/run_all.sh)
 sim/*.vvp
 sim/*.vcd
