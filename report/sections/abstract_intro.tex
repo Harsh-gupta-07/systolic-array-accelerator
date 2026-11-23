@@ -14,8 +14,9 @@ modes, output requantisation with saturation, hardware performance
 counters, optional pipeline registers, a sequential single-MAC baseline
 and a weight-stationary comparison array. More than 85\,000 element-level
 checks, including a 1000-matrix random regression, pass against a bit-exact
-Python golden model. Overlapping data transfer with computation brings the
-cost of a $4\times4$ product from 60 to 12 cycles. Two pipeline registers
+Python golden model. A row-wide interface and overlapping data transfer
+with computation bring the cost of a $4\times4$ product from 60 to 12
+cycles. Two pipeline registers
 raise the post-route clock on a Lattice ECP5 FPGA from 51 to 116~MHz, so a
 $4\times4$ product completes every 121~ns: 12.4$\times$ faster than the
 sequential baseline, using 16 DSP blocks. A cycle-exact analytical model

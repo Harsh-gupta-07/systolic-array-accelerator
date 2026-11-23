@@ -56,7 +56,8 @@ Table~\ref{tab:synth} lists synthesis results. On Xilinx 7-series, Yosys
 maps each MAC into one DSP48E1 slice, using the slice's own post-adder as
 the accumulator. Without DSPs (\texttt{-nodsp}) a single MAC costs 339
 LUTs instead of 32. Phase~II roughly doubles the flip-flops of Phase~I: the
-two operand banks add 512~FFs and the result buffer another 512. This is
+second operand bank adds 256~FFs, the result buffer 512 and the
+performance counters 128, which exactly accounts for the measured +897~FFs. This is
 the price of overlapping. At $N=8$ the design needs 64 DSPs and
 10.8\,k LUTs, which still fits a mid-range Artix-7 (e.g.\ XC7A100T with 240
 DSPs). The 90 DSPs of an XC7A35T limit that device to $N\le 9$.

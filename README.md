@@ -8,7 +8,7 @@ A parameterised **N×N output-stationary systolic array** for signed fixed-point
 | **Final report (Phase II)** | [`report/final_report.pdf`](report/final_report.pdf) (IEEE format, LaTeX source alongside) |
 | **Phase I report** | [`report/phase1_report.pdf`](report/phase1_report.pdf) |
 | **Prototype video (Phase I)** | **[Watch on Google Drive](https://drive.google.com/file/d/1_Fuetn23N6ReVL-TJW9B5vXp2K5eXfok/view?usp=sharing)** |
-| **Team** | Harshvardhan Gupta (2401010185) · Harsha Gonela (2401010181) · Abhijeet Dey (2401010014) · Saumya Kumar (2401010432) · Shivansh Upadhayay (2401020109) |
+| **Team** | Harshvardhan Gupta (2401010185) · Harsha Gonela (2401010181) · Abhijeet Dey (2401010014) · Saumya Kumar (2401010432) · Shivansh Upadhyay (2401020109) |
 
 ![Final architecture](docs/figures/fig_system_v2.png)
 
@@ -75,7 +75,7 @@ cd sim
 make all            # every functional test (or ./run_all.sh / run_all.bat without make)
 ```
 
-Expected: 21 `RESULT: ... PASSED` lines. Individual targets:
+Expected: 21 `RESULT:` lines, all passing. Individual targets:
 
 | Target | What it runs |
 |---|---|
@@ -94,7 +94,7 @@ cd syn
 ./run_all_synth.sh   # Yosys (Xilinx 7-series estimates) + nextpnr-ecp5 (post-route Fmax)
 ```
 
-Vivado (optional, Windows/Linux): `syn/vivado/run_vivado_all.bat` or `.sh` gives Artix-7 utilisation and Fmax.
+Vivado (optional): `syn/vivado/run_vivado_all.bat` or `.sh` gives Artix-7 utilisation and Fmax.
 
 ## References
 

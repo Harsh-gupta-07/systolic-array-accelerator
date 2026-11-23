@@ -2,7 +2,7 @@
 # synth_ooc.tcl - Vivado non-project flow: synthesis + place & route of one
 # design out-of-context (no board / pin constraints needed) on an Artix-7.
 #
-# Usage (from this folder, Vivado 2020.x or newer, Windows or Linux):
+# Usage (from this folder, Vivado 2020.x or newer):
 #   vivado -mode batch -source synth_ooc.tcl -tclargs systolic_top_v2 "MUL_PIPE=1 BUF_REG=1" v2_n4_fast
 #   vivado -mode batch -source synth_ooc.tcl -tclargs seq_matmul "" seq_matmul
 #   vivado -mode batch -source synth_ooc.tcl -tclargs systolic_top "" p1_top
