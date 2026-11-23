@@ -1,0 +1,11 @@
+% res_tiling.tex  -- written by Abhijeet
+\subsection{Tiling Larger Matrices}
+Accumulate mode lets the $4\times4$ array compute any $S\times S$ GEMM
+with $S$ a multiple of 4. The host iterates over output tiles $(I,J)$ and
+accumulates $T=S/4$ tile products
+$A_{IK}B_{KJ}$ without clearing, while loading the next tiles in parallel.
+The $8\times8$ GEMM (8 tile products) takes 105 cycles and the
+$12\times12$ (27 tile products) takes 319 cycles. Both match the model of
+Section~IV-B exactly. This is 4.9$\times$ and 5.4$\times$ fewer cycles
+than the sequential $S^3$, and the array is busy for 80--87\,\% of the
+time.
