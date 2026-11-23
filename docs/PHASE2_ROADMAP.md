@@ -1,5 +1,14 @@
 # Phase II Roadmap (70% of the grade)
 
+> **Status (final): completed.** Every core item below was implemented, verified and measured. The optional NumPy timing comparison and the 16-bit operand variant were not pursued.
+> The results are in [`report/final_report.pdf`](../report/final_report.pdf) and [`results/summary.md`](../results/summary.md).
+> Differences from the original plan:
+> - **Synthesis:** done with the open-source Yosys + nextpnr flow (Lattice ECP5 post-route Fmax, Xilinx 7-series resource estimates). The Vivado script is in `syn/vivado/`.
+> - **Timing:** a registered buffer output (`BUF_REG`) was added after the critical path was found in the buffer read mux.
+> - **Weight-stationary:** implemented as a full streaming design (`rtl/ws/`), not just an optional study.
+> - **Result buffer:** used instead of a shift-out chain.
+> - **Diagonal clear propagation:** not needed. Back-to-back starts from the DONE state plus accumulate mode give the same benefit with a simpler controller.
+
 Phase I delivered a **functionally correct** prototype. Phase II is about **results and discussion**: numbers, comparisons and trade-offs. Every member owns at least one deliverable that produces a quantitative result, so that everyone has something concrete to present and defend in the interview.
 
 The final report needs a *Results and Discussion* section. Each item below feeds a table or plot in that section.
