@@ -1,9 +1,8 @@
 % limitations_conclusion.tex  -- written by Shivansh
 \subsection{Limitations}
 The FPGA numbers come from an open-source flow: post-route on Lattice ECP5,
-and synthesis-level estimates for Xilinx 7-series. Vivado results for an
-Artix-7 may differ by tens of percent; the included script reproduces
-them. The sequential baseline was not pipelined, so its 75.7~MHz
+and synthesis-level estimates for Xilinx 7-series. Results from the
+vendor's own tools for a Xilinx device may differ by tens of percent. The sequential baseline was not pipelined, so its 75.7~MHz
 understates what a tuned single-MAC design could reach; the cycle-based
 speed-ups (5.4$\times$ compute, 9.4$\times$ end-to-end) do not depend on
 this. Finally, the OS design reloads both operands for every product,

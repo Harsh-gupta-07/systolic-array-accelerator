@@ -3,7 +3,7 @@
 > **Status (final): completed.** Every core item below was implemented, verified and measured. The optional NumPy timing comparison and the 16-bit operand variant were not pursued.
 > The results are in [`report/final_report.pdf`](../report/final_report.pdf) and [`results/summary.md`](../results/summary.md).
 > Differences from the original plan:
-> - **Synthesis:** done with the open-source Yosys + nextpnr flow (Lattice ECP5 post-route Fmax, Xilinx 7-series resource estimates). The Vivado script is in `syn/vivado/`.
+> - **Synthesis:** done with the open-source Yosys + nextpnr flow (Lattice ECP5 post-route Fmax, Xilinx 7-series resource estimates).
 > - **Timing:** a registered buffer output (`BUF_REG`) was added after the critical path was found in the buffer read mux.
 > - **Weight-stationary:** implemented as a full streaming design (`rtl/ws/`), not just an optional study.
 > - **Result buffer:** used instead of a shift-out chain.
@@ -21,7 +21,7 @@ The final report needs a *Results and Discussion* section. Each item below feeds
 |---|---|
 | Add **output requantisation**: Q24.8 → Q8.8 or Q4.4 with round-to-nearest and **saturation**, plus an overflow flag | Table of error vs the floating-point result (Python) for the Q4.4/Q8.8 outputs |
 | Make `DATA_W` 8/16 configurable; optionally add a **pipelined multiplier register** | Area vs Fmax for the 1-stage and 2-stage MAC |
-| Synthesise the MAC alone in Vivado with `use_dsp = "yes"` and `"no"` | DSP48 vs LUT multiplier: resources and timing |
+| Synthesise the MAC alone with and without DSP blocks | DSP48 vs LUT multiplier: resources and timing |
 | Interview prep | Why Q4.4? Why a 32-bit accumulator? Fixed vs floating point |
 
 ## Member 2: PE and dataflow comparison
@@ -47,14 +47,14 @@ The final report needs a *Results and Discussion* section. Each item below feeds
 |---|---|
 | **Double-buffered (ping-pong) input buffers**: load the next A/B while the current product is computing | Throughput with and without overlap |
 | **Hardware performance counters**: total cycles, busy cycles, MAC count, readable through the interface | Measured MAC/cycle and utilisation |
-| **Vivado synthesis and implementation** of `systolic_top` for an Artix-7 part (e.g. xc7a35t, as on Basys-3/Arty). Only the part number is needed, no board | Utilisation table (LUT/FF/DSP/BRAM), **Fmax** from timing (WNS), critical path |
+| **Synthesis and place-and-route** of `systolic_top` (Yosys + nextpnr). No board is needed | Utilisation table (LUT/FF/DSP/BRAM), **Fmax** from timing, critical path |
 | Compute **GOPS = 2·N²·Fmax** (peak) and the achieved value | Peak vs achieved throughput |
 
 ## Member 5: baseline, regression and final integration
 
 | Task | Output for the report |
 |---|---|
-| **Sequential baseline**: one MAC unit plus counters computing C in N³ cycles (`rtl/seq_matmul.v` + testbench) | **Speed-up** = T_seq / T_systolic for N = 2…8, and **speed-up per unit area** (with the Vivado numbers) |
+| **Sequential baseline**: one MAC unit plus counters computing C in N³ cycles (`rtl/seq_matmul.v` + testbench) | **Speed-up** = T_seq / T_systolic for N = 2…8, and **speed-up per unit area** (with the synthesis numbers) |
 | **Constrained-random regression**: the golden model generates ≥ 1000 random matrices (seeded) | Pass rate and coverage of corner cases |
 | Optional: a Python/NumPy timing comparison (as in Lab 6C) for context | Plot of cycles vs N |
 | Final report integration: *Results and Discussion*, *Conclusion*, final figures | Final IEEE report |
@@ -67,7 +67,7 @@ The final report needs a *Results and Discussion* section. Each item below feeds
 |---|---|
 | 1 | Baseline RTL, perf counters, valid/clear propagation, requantisation |
 | 2 | Double buffering, tiling, random regression green |
-| 3 | Vivado runs, parameter sweeps, plots |
+| 3 | Synthesis runs, parameter sweeps, plots |
 | 4 | Final report, rehearse the interview (each member explains *every* module, not only their own) |
 
 ## Interview preparation: questions to expect

@@ -42,7 +42,7 @@ A parameterised **N×N output-stationary systolic array** for signed fixed-point
 | Sequential single-MAC baseline (N³ cycles) | `rtl/seq_matmul.v` |
 | Weight-stationary streaming array (TPU-style), for comparison | `rtl/ws/` |
 | Golden model, numerics study, performance model, result plots | `model/` |
-| Yosys + nextpnr synthesis / P&R, Vivado script | `syn/` |
+| Yosys + nextpnr synthesis / place-and-route | `syn/` |
 
 ## Repository layout
 
@@ -59,9 +59,9 @@ model/                   golden_model.py, numerics_analysis.py, perf_model.py,
                          plot_results.py, plot_wave_v2.py, plot_style.py
 tests/vectors/           generated $readmemh vectors (directed, random, requant, WS, tiled)
 sim/                     Makefile, run_all.sh, GTKWave presets (*.gtkw)
-syn/                     synth_one.sh, run_all_synth.sh, collect_synth.py, vivado/
+syn/                     synth_one.sh, run_all_synth.sh, collect_synth.py
 results/                 logs, CSV tables, figures, summary.md (all regenerable)
-docs/                    figures, interview guides, commit plans, roadmap
+docs/                    figures, Phase II roadmap
 report/                  Phase I and final IEEE reports (LaTeX + PDF)
 ```
 
@@ -93,8 +93,6 @@ Synthesis (about 7 minutes):
 cd syn
 ./run_all_synth.sh   # Yosys (Xilinx 7-series estimates) + nextpnr-ecp5 (post-route Fmax)
 ```
-
-Vivado (optional): `syn/vivado/run_vivado_all.sh` gives Artix-7 utilisation and Fmax.
 
 ## References
 
