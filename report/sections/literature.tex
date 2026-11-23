@@ -1,0 +1,63 @@
+% literature.tex  -- written by Harsha
+\section{Literature Review}
+
+\subsection{Systolic Computing}
+Kung and Leiserson introduced systolic arrays for VLSI matrix
+computations~\cite{kung1979systolic}. Kung later characterised them by
+rhythmic data flow, high operand reuse, nearest-neighbour communication
+and simple replicated cells~\cite{kung1982why}. These are the same
+data-parallel principles that underlie SIMD and multiprocessor
+design~\cite{culler_pca}.
+
+\subsection{Systolic Arrays in AI Accelerators}
+Google's TPU~\cite{jouppi2017tpu} uses a $256\times256$ weight-stationary
+array of 8-bit MACs (92~TOPS). It is fed from a unified buffer and a
+double-buffered weight FIFO, so that data movement overlaps computation.
+Later generations keep the systolic core~\cite{jouppi2021tpuv4i}.
+Gemmini~\cite{genc2021gemmini} generates parameterised systolic
+accelerators for RISC-V SoCs and supports both OS and WS dataflows.
+SCALE-Sim~\cite{samajdar2018scalesim} models array size, dataflow and buffer
+effects. All three works show that \emph{data movement and buffering},
+not the MAC itself, often decide real throughput. Phase~II of this project
+confirms this observation quantitatively.
+
+\subsection{Dataflow Taxonomy}
+Sze \emph{et al.}~\cite{sze2017efficient} classify accelerators by which
+operand stays in the PE (Table~\ref{tab:dataflow}). Weight-stationary
+designs (TPU) preload $B$ and move partial sums. Output-stationary designs
+(ShiDianNao~\cite{du2015shidiannao}) keep $C_{ij}$ in place and stream $A$
+and $B$. Row-stationary designs (Eyeriss~\cite{chen2017eyeriss}) maximise
+reuse in convolutions. We implement OS as the main design and WS as a
+measured alternative.
+
+\begin{table}[t]
+\centering
+\caption{Systolic dataflows}
+\label{tab:dataflow}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+ & \textbf{Weight-st.} & \textbf{Output-st.} & \textbf{Row-st.}\\
+\midrule
+Resident in PE & $B$ (weights) & $C$ (psum) & filter row \\
+Moving operands & $A$, psum & $A$, $B$ & mixed \\
+Vertical link width & 32 b (psum) & 8 b ($B$) & mixed \\
+Example & TPU~\cite{jouppi2017tpu} & ShiDianNao~\cite{du2015shidiannao} & Eyeriss~\cite{chen2017eyeriss}\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Fixed-Point Arithmetic}
+Jacob \emph{et al.}~\cite{jacob2018quantization} showed that 8-bit integer
+inference loses little accuracy compared with floating point, while an
+8-bit multiplier is far cheaper. Production accelerators therefore pair
+8-bit operands with 32-bit accumulators and requantise the
+outputs~\cite{jouppi2017tpu}. We follow this scheme with Q4.4 operands, a
+Q24.8 accumulator and Q4.4 requantised outputs.
+
+\subsection{Positioning}
+Industrial arrays are too large to study in a course project. Our design
+is small enough to simulate exhaustively with open-source tools, yet it
+exposes the same trade-offs: latency versus throughput, PE count versus
+cycles, buffering versus area, clock frequency versus pipeline depth, and
+dataflow choice.
